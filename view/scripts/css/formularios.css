@@ -1,4 +1,4 @@
-@import url(main2.css);
+@import url(main.css);
 /* MAIN2 CSS FILE  - FOR FORMS*/
 input[type="text"],input[type="password"],input[type="email"]{
     border: 1px solid #ccc;
@@ -33,6 +33,7 @@ button:hover{
     color:white;
     text-decoration: none;
 }
+
 fieldset{
     max-width: 500px;
     margin: 0 auto;
