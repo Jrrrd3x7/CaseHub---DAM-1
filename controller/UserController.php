@@ -1,23 +1,68 @@
 <?php
-// Datos de conexión
-$host = "localhost";
-$usuario = "root";
-$password = "";
-$base_datos = "mi_base_datos";
+session_start();
 
-// Crear conexión
-$conexion = new mysqli($host, $usuario, $password, $base_datos);
+class UserController {
 
-// Verificar conexión
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+    private $conn;
+
+    public function __construct() {
+        $this->conn = new mysqli("localhost", "root", "", "tienda_fundas");
+
+        if ($this->conn->connect_error) {
+            die("Error de conexión: " . $this->conn->connect_error);
+        }
+    }
+
+    // REGISTER
+    public function register($nombre, $email, $password) {
+
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO usuarios (nombre, email, password)
+                VALUES ('$nombre', '$email', '$passwordHash')";
+
+        if ($this->conn->query($sql)) {
+            return "Usuario registrado correctamente";
+        } else {
+            return "Error: " . $this->conn->error;
+        }
+    }
+
+    // LOGIN
+    public function login($email, $password) {
+
+        $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+        $resultado = $this->conn->query($sql);
+
+        if ($resultado->num_rows > 0) {
+
+            $user = $resultado->fetch_assoc();
+
+            if (password_verify($password, $user['password'])) {
+
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['nombre'] = $user['nombre'];
+
+                return true;
+
+            } else {
+                return "Contraseña incorrecta";
+            }
+
+        } else {
+            return "Usuario no encontrado";
+        }
+    }
+
+    // LOGOUT
+    public function logout() {
+        session_destroy();
+        header("Location: views/login.php");
+        exit();
+    }
+
+    // COMPROBAR LOGIN
+    public function isLogged() {
+        return isset($_SESSION['user_id']);
+    }
 }
-
-echo "Conexión exitosa";
-
-// Establecer charset UTF-8
-$conexion->set_charset("utf8mb4");
-
-// Cerrar conexión
-$conexion->close();
-?>
