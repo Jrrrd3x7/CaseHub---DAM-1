@@ -66,29 +66,29 @@
     <section>
         <form action="#" method="get" autocomplete="on">
             <fieldset>
-                <legend>Buscar esdeveniments de fundes</legend>
-                    <label for="nom">Nom esdeveniment</label><br>
+                <legend>Buscar Evento</legend>
+                    <label for="nom">Nombre Evento</label><br>
                     <input type="text" id="nom" name="nom" placeholder="Release funda iPhone 16"
                         minlength="3"
                         oninvalid="this.setCustomValidity('Mínim 3 caràcters')"
                         oninput="this.setCustomValidity('')">
                         <br><br>
 
-                    <label for="tipus">Tipus</label><br>
+                    <label for="tipus">Tipo</label><br>
                     <select id="tipus" name="tipus" required>
                     <option value="">-- Selecciona --</option>
-                    <option>Release nova funda</option>
-                    <option>Col·laboració marca</option>
+                    <option>Release funda nueva</option>
+                    <option>Colaboracion</option>
                     <option>Meet & Greet</option>
-                    <option>Test de producte</option>
+                    <option>Test de producto</option>
                     <option>Workshop</option>
-                    <option>Fira tecnològica</option>
+                    <option>Feria Tecnologica</option>
                 </select>
                 <br><br>
-                <label for="data">Data</label><br>
+                <label for="data">Fecha</label><br>
                 <input type="date" id="data" name="data" required>
                 <br><br>
-                <label for="ciutat">Ciutat</label><br>
+                <label for="ciutat">Ciudad</label><br>
                 <input type="text" id="ciutat" name="ciutat"
                 placeholder="Barcelona"
                 pattern="[A-Za-zÀ-ÿ ]+"
