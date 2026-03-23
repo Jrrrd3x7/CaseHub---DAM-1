@@ -1,18 +1,22 @@
 /* MAIN CSS FILE  - FOR PC2*/
 
 /* ON/OFF RESOLUTION*/
-.nav-pc{
-   display:contents 
+.nav-pc {
+    display: contents
 }
-.nav-phone{
-    display:none 
+
+.nav-phone {
+    display: none
 }
-header{
+
+header {
     font-size: 20px;
 }
-footer{
+
+footer {
     font-size: 20px;
 }
-section{
+
+section {
     font-size: 16px;
 }

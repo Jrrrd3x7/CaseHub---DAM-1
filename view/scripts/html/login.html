@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,7 @@
 </head>
 <header>
     <nav class="nav-pc">
-        <div> 
+        <div>
             <ul>
                 <li><img src="../../assets/imagenes/logo_CaseHub.png" class="logo-image"></li>
                 <li style="display:none;"><a href="index.html">TOP&nbsp;VENTAS</a></li>
@@ -28,12 +29,13 @@
                 <li id="menu-item1" class="menu-item1" style="position: relative;">
                     <a style="display:none;"><i class="bi bi-person"></i></a>
                     <ul id="submenu1" class="submenu1" style="position:absolute;top:40px;left:-100px;">
-                        <li class="displayed-content"><a href="create_account.html"><i class="bi bi-person"></i> PERFIL</a></li>
+                        <li class="displayed-content"><a href="create_account.html"><i class="bi bi-person"></i>
+                                PERFIL</a></li>
                         <li class="displayed-content"><a href="login.html">CERRAR&nbsp;SESION</a></li>
                     </ul>
                 </li>
-            </ul> 
-        </div>   
+            </ul>
+        </div>
     </nav>
     <nav class="nav-phone">
         <div>
@@ -45,16 +47,18 @@
                         <li class="displayed-content"><a href="#">SERVICIOS</a></li>
                         <li class="displayed-content"><a href="events.html">EVENTOS</a></li>
                         <li class="displayed-content"><a href="#">PREMIUM</a></li>
-                        <li class="displayed-content"><a href="create_account.html"><i class="bi bi-person"></i> PERFIL</a></li>
+                        <li class="displayed-content"><a href="create_account.html"><i class="bi bi-person"></i>
+                                PERFIL</a></li>
                         <li class="displayed-content"><a href="login.html">CERRAR&nbsp;SESION</a></li>
                     </ul>
                     <img src="../../assets/imagenes/logo_CaseHub.png" class="logo-image">
                 </li>
                 <li style="display:none;"><a href="insert_card2.html"><i class="bi bi-cart"></i></a></li>
             </ul>
-        </div>    
+        </div>
     </nav>
 </header>
+
 <body>
     <script src="../js/menus_desplegables.js"></script>
     <!-- Botón volver al inicio -->
@@ -63,11 +67,11 @@
             <a class="return" href="index.html"><i class="bi bi-arrow-left-circle"></i> Volver al Inicio</a>
         </button>
     </section>
- 
+
     <!-- Formulario de login -->
     <section class="form">
         <div>
-            <form id="loginForm" action="../php/login.php" method ="POST">
+            <form id="loginForm" action="../php/login.php" method="POST">
                 <fieldset>
                     <legend><i class="bi bi-person"></i> Iniciar Sesión </legend>
                     <br>
@@ -76,17 +80,19 @@
                         <input type="email" id="email" placeholder="Email" required minlength="10" maxlength="30">
                         <span class="feedback">Email incorrecto</span>
                         <br><br>
-    
+
                         <!-- Contraseña -->
-                        <input type="password" id="password" placeholder="Contraseña" required minlength="8" maxlength="20" pattern=".*[A-Z].*[0-9].*" title="La Contraseña debe contener al menos una Mayúscula y un Número">
+                        <input type="password" id="password" placeholder="Contraseña" required minlength="8"
+                            maxlength="20" pattern=".*[A-Z].*[0-9].*"
+                            title="La Contraseña debe contener al menos una Mayúscula y un Número">
                         <span class="feedback">Contraseña incorrecta</span>
                         <br><br>
-    
+
                         <!-- Checkbox -->
                         <input type="checkbox" id="remember">
                         <label for="remember">Mantener Inicio de Sesion</label>
                         <br><br>
-    
+
                         <!-- Boton -->
                         <button type="submit">Iniciar Sesión</button>
                     </div>
@@ -99,4 +105,5 @@
     <br>
     <p>©2025 CaseHUB</p>
 </footer>
+
 </html>

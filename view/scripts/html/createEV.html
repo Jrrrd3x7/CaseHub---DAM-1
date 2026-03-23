@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,7 @@
 </head>
 <header>
     <nav class="nav-pc">
-        <div> 
+        <div>
             <ul>
                 <li><img src="../../assets/imagenes/logo_CaseHub.png" class="logo-image"></li>
                 <li><a href="index.html">TOP&nbsp;VENTAS</a></li>
@@ -32,8 +33,8 @@
                         <li class="displayed-content"><a href="login.html">CERRAR&nbsp;SESION</a></li>
                     </ul>
                 </li>
-            </ul> 
-        </div>   
+            </ul>
+        </div>
     </nav>
     <nav class="nav-phone">
         <div>
@@ -52,11 +53,12 @@
                 </li>
                 <li><a href="insert_card.html"><i class="bi bi-cart"></i></a></li>
             </ul>
-        </div>    
+        </div>
     </nav>
 </header>
+
 <body>
- <script src="../js/menus_desplegables.js"></script>
+    <script src="../js/menus_desplegables.js"></script>
     <!-- Botón volver al inicio -->
     <section>
         <button class="form">
@@ -67,11 +69,9 @@
         <form action="#" method="post" autocomplete="on">
             <fieldset>
                 <legend>Crear Evento de Fundas</legend>
-                
+
                 <label for="nom">Nombre</label><br>
-                <input type="text" id="nom" name="nom"
-                placeholder="Release funda Galaxy"
-                required minlength="5">
+                <input type="text" id="nom" name="nom" placeholder="Release funda Galaxy" required minlength="5">
                 <br><br>
 
                 <label for="tipus">Tipo</label><br>
@@ -88,9 +88,8 @@
                 <br><br>
 
                 <label for="descripcio">Descripcion</label><br>
-                <textarea id="descripcio" name="descripcio"
-                required minlength="10"
-                placeholder="Explica el Evento"></textarea>
+                <textarea id="descripcio" name="descripcio" required minlength="10"
+                    placeholder="Explica el Evento"></textarea>
                 <br><br>
 
                 <label for="data">Fecha</label><br>
@@ -98,18 +97,18 @@
                 <br><br>
 
                 <label for="places">Lugares Disponibles</label><br>
-                <input type="number" id="places" name="places"
-                required min="1" max="500">
+                <input type="number" id="places" name="places" required min="1" max="500">
                 <br><br>
 
                 <button type="submit">Crear Evento</button>
 
-                </fieldset>
-            </form>
+            </fieldset>
+        </form>
     </section>
 </body>
 <footer>
     <br>
     <p>©2025 CaseHUB</p>
 </footer>
+
 </html>

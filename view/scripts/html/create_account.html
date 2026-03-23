@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,7 @@
 </head>
 <header>
     <nav class="nav-pc">
-        <div> 
+        <div>
             <ul>
                 <li><img src="../../assets/imagenes/logo_CaseHub.png" class="logo-image"></li>
                 <li><a href="index.html">TOP&nbsp;VENTAS</a></li>
@@ -32,8 +33,8 @@
                         <li class="displayed-content"><a href="login.html">CERRAR&nbsp;SESION</a></li>
                     </ul>
                 </li>
-            </ul> 
-        </div>   
+            </ul>
+        </div>
     </nav>
     <nav class="nav-phone">
         <div>
@@ -52,13 +53,14 @@
                 </li>
                 <li><a href="insert_card.html"><i class="bi bi-cart"></i></a></li>
             </ul>
-        </div>    
+        </div>
     </nav>
 </header>
+
 <body>
     <script src="../js/menus_desplegables.js"></script>
     <section>
-         <!-- Botón volver al inicio -->
+        <!-- Botón volver al inicio -->
         <button class="form">
             <a class="return" href="index.html"><i class="bi bi-arrow-left-circle"></i> Volver al Inicio</a>
         </button>
@@ -72,30 +74,30 @@
                 <label for="name">Nombre</label>
                 <input type="text" id="name" name="name" required minlength="2" placeholder="Nombre"
                     autocomplete="given-name"><br><br>
- 
+
                 <label for="surname">Apellido</label>
                 <input type="text" id="surname" name="surname" required minlength="2" placeholder="Apellido"
                     autocomplete="family-name"><br><br>
- 
+
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" required placeholder="Ejemplo@email.com"
                     autocomplete="email"><br><br>
- 
+
                 <span class="info">
                     Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un símbolo.
                 </span><br><br>
- 
+
                 <label for="password">Contraseña</label>
                 <input type="password" id="password" name="password" minlength="6" placeholder="Contraseña"
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
                     title="Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un símbolo."><br><br>
- 
+
                 <label for="password-confirm">Confirmar contraseña</label>
                 <input type="password" id="password-confirm" name="password-confirm" minlength="6"
                     placeholder="Confirmar contraseña" autocomplete="new-password"
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
                     title="Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un símbolo."><br><br>
- 
+
                 <label for="Pais">País: </label>
                 <select id="Pais" name="Pais" required>
                     <option value="">-- Selecciona un país --</option>
@@ -114,13 +116,13 @@
                     <option value="PT">Portugal</option>
                     <option value="UK">Reino Unido</option>
                 </select><br><br>
- 
+
                 <!-- <input type="checkbox" id="adulto" name="adulto" required>
                 <label for="adulto">
                     Confirmo que soy mayor de 18 años
                 </label>
                 <br><br> -->
- 
+
                 <button type="submit" formaction="#" formmethod="get" formenctype="application/x-www-form-urlencoded"
                     formtarget="_self">
                     <i class="bi bi-person-plus"></i> Create Account
@@ -133,4 +135,5 @@
     <br>
     <p>©2025 CaseHUB</p>
 </footer>
+
 </html>

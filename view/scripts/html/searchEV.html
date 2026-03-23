@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,7 @@
 </head>
 <header>
     <nav class="nav-pc">
-        <div> 
+        <div>
             <ul>
                 <li><img src="../../assets/imagenes/logo_CaseHub.png" class="logo-image"></li>
                 <li><a href="index.html">TOP&nbsp;VENTAS</a></li>
@@ -32,8 +33,8 @@
                         <li class="displayed-content"><a href="login.html">CERRAR&nbsp;SESION</a></li>
                     </ul>
                 </li>
-            </ul> 
-        </div>   
+            </ul>
+        </div>
     </nav>
     <nav class="nav-phone">
         <div>
@@ -52,11 +53,12 @@
                 </li>
                 <li><a href="insert_card.html"><i class="bi bi-cart"></i></a></li>
             </ul>
-        </div>    
+        </div>
     </nav>
 </header>
+
 <body>
- <script src="../js/menus_desplegables.js"></script>
+    <script src="../js/menus_desplegables.js"></script>
     <!-- Botón volver al inicio -->
     <section>
         <button class="form">
@@ -67,33 +69,28 @@
         <form action="#" method="get" autocomplete="on">
             <fieldset>
                 <legend>Buscar Evento</legend>
-                    <label for="nom">Nombre Evento</label><br>
-                    <input type="text" id="nom" name="nom" placeholder="Release funda iPhone 16"
-                        minlength="3"
-                        oninvalid="this.setCustomValidity('Mínim 3 caràcters')"
-                        oninput="this.setCustomValidity('')">
-                        <br><br>
+                <label for="nom">Nombre Evento</label><br>
+                <input type="text" id="nom" name="nom" placeholder="Release funda iPhone 16" minlength="3"
+                    oninvalid="this.setCustomValidity('Mínim 3 caràcters')" oninput="this.setCustomValidity('')">
+                <br><br>
 
-                    <label for="tipus">Tipo</label><br>
-                    <select id="tipus" name="tipus" required>
-                        <option value="">-- Selecciona --</option>
-                        <option>Release funda nueva</option>
-                        <option>Colaboracion</option>
-                        <option>Meet & Greet</option>
-                        <option>Test de producto</option>
-                        <option>Workshop</option>
-                        <option>Feria Tecnologica</option>
-                    </select>
+                <label for="tipus">Tipo</label><br>
+                <select id="tipus" name="tipus" required>
+                    <option value="">-- Selecciona --</option>
+                    <option>Release funda nueva</option>
+                    <option>Colaboracion</option>
+                    <option>Meet & Greet</option>
+                    <option>Test de producto</option>
+                    <option>Workshop</option>
+                    <option>Feria Tecnologica</option>
+                </select>
                 <br><br>
                 <label for="data">Fecha</label><br>
                 <input type="date" id="data" name="data" required>
                 <br><br>
                 <label for="ciutat">Ciudad</label><br>
-                <input type="text" id="ciutat" name="ciutat"
-                placeholder="Barcelona"
-                pattern="[A-Za-zÀ-ÿ ]+"
-                title="Només lletres"
-                required>
+                <input type="text" id="ciutat" name="ciutat" placeholder="Barcelona" pattern="[A-Za-zÀ-ÿ ]+"
+                    title="Només lletres" required>
                 <br><br>
                 <button type="submit">Buscar</button>
             </fieldset>
@@ -104,4 +101,5 @@
     <br>
     <p>©2025 CaseHUB</p>
 </footer>
+
 </html>

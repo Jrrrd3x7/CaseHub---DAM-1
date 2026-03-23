@@ -9,7 +9,7 @@ const submenu2 = document.getElementById('submenu2');
 submenu1.style.visibility = 'hidden';
 submenu2.style.visibility = 'hidden';
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     if (menuItem1.contains(event.target)) {
         submenu1.style.visibility = (submenu1.style.visibility === 'hidden') ? 'visible' : 'hidden';
     } else if (!submenu1.contains(event.target)) {
@@ -17,7 +17,7 @@ document.addEventListener('click', function(event) {
     }
 });
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     if (menuItem2.contains(event.target)) {
         submenu2.style.visibility = (submenu2.style.visibility === 'hidden') ? 'visible' : 'hidden';
     } else if (!submenu2.contains(event.target)) {

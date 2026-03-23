@@ -1,18 +1,22 @@
 /* MAIN2 CSS FILE  - FOR PHONES*/
 
 /* ON/OFF RESOLUTION*/
-.nav-phone{
-    display:contents 
+.nav-phone {
+    display: contents
 }
-.nav-pc{
-    display:none 
+
+.nav-pc {
+    display: none
 }
-header{
+
+header {
     font-size: 30px;
 }
-footer{
+
+footer {
     font-size: 30px;
 }
-section{
+
+section {
     font-size: 24px;
 }

@@ -1,6 +1,9 @@
 @import url(main.css);
+
 /* MAIN2 CSS FILE  - FOR FORMS*/
-input[type="text"],input[type="password"],input[type="email"]{
+input[type="text"],
+input[type="password"],
+input[type="email"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 8px;
@@ -8,15 +11,18 @@ input[type="text"],input[type="password"],input[type="email"]{
     width: 100%;
     box-sizing: border-box;
 }
-input:focus{
+
+input:focus {
     border-color: #4CAF50;
     outline: none;
 }
+
 input:invalid:not(:placeholder-shown) {
     border-color: red;
     background-color: #fdd;
 }
-button{
+
+button {
     padding: 8px 12px;
     background-color: #4CAF50;
     color: white;
@@ -25,24 +31,28 @@ button{
     cursor: pointer;
     text-decoration: none;
 }
-button:hover{
+
+button:hover {
     background-color: #45a049;
-    color:white
+    color: white
 }
-.return{
-    color:white;
+
+.return {
+    color: white;
     text-decoration: none;
 }
 
-fieldset{
+fieldset {
     max-width: 500px;
     margin: 0 auto;
     border: 1px solid var(--blue-base);
 }
-input[type="checkbox"]{
+
+input[type="checkbox"] {
     margin-right: 5px;
 }
-textarea{
+
+textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 8px;
