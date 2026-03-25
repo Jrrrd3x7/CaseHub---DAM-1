@@ -66,7 +66,7 @@
         </button>
     </section>
     <section>
-        <form id="Index" action="#" method="get" enctype="application/x-www-form-urlencoded" target="_self"
+        <form id="Index" action="../php/create_user.php" method="post" enctype="application/x-www-form-urlencoded" target="_self"
             autocomplete="on">
             <fieldset>
                 <legend><i class="bi bi-person"></i> Registrar cuenta </legend>
@@ -79,7 +79,7 @@
                 <input type="text" id="surname" name="surname" required minlength="2" placeholder="Apellido"
                     autocomplete="family-name"><br><br>
 
-                <label for="email">E-mail</label>
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" required placeholder="Ejemplo@email.com"
                     autocomplete="email"><br><br>
 
@@ -98,8 +98,8 @@
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
                     title="Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un símbolo."><br><br>
 
-                <label for="Pais">País: </label>
-                <select id="Pais" name="Pais" required>
+                <label for="pais">País: </label>
+                <select id="pais" name="pais" required>
                     <option value="">-- Selecciona un país --</option>
                     <option value="RU">Rusia</option>
                     <option value="ES">España</option>
