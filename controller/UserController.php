@@ -1,11 +1,13 @@
 <?php
 session_start();
 
-class UserController {
+class UserController
+{
 
     private $conn;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->conn = new mysqli("localhost", "root", "", "tienda_fundas");
 
         if ($this->conn->connect_error) {
@@ -14,7 +16,8 @@ class UserController {
     }
 
     // REGISTER
-    public function register($nombre, $email, $password) {
+    public function register($nombre, $email, $password)
+    {
 
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
@@ -22,14 +25,17 @@ class UserController {
                 VALUES ('$nombre', '$email', '$passwordHash')";
 
         if ($this->conn->query($sql)) {
-            return "Usuario registrado correctamente";
+            $_SESSION['message'] = "Usuario registrado correctamente";
+            header("Location: view/index.html");
+            exit();
         } else {
             return "Error: " . $this->conn->error;
         }
     }
 
     // LOGIN
-    public function login($email, $password) {
+    public function login($email, $password)
+    {
 
         $sql = "SELECT * FROM usuarios WHERE email = '$email'";
         $resultado = $this->conn->query($sql);
@@ -44,25 +50,25 @@ class UserController {
                 $_SESSION['nombre'] = $user['nombre'];
 
                 return true;
-
             } else {
                 return "Contraseña incorrecta";
             }
-
         } else {
             return "Usuario no encontrado";
         }
     }
 
     // LOGOUT
-    public function logout() {
+    public function logout()
+    {
         session_destroy();
-        header("Location: views/login.php");
+        header("Location: view/login.php");
         exit();
     }
 
     // COMPROBAR LOGIN
-    public function isLogged() {
+    public function isLogged()
+    {
         return isset($_SESSION['user_id']);
     }
 }
