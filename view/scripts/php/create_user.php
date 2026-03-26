@@ -1,5 +1,8 @@
-<?php
+<?php 
+session_start();
 $conexion = new mysqli("localhost", "root", "1234567890", "CaseHub");
+
+echo "Conexión exitosa";
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
@@ -17,12 +20,6 @@ $conexion->query("CALL CreateUser('$name', '$surname', '$email', '$country', '$p
 while ($conexion->more_results() && $conexion->next_result()) {}
 
 $resultado = $conexion->query("CALL PrintUsers()");
-
-echo "<h2>Usuarios registrados</h2>";
-
-while ($u = $resultado->fetch_assoc()) {
-    echo $u["ID"] . " - " . $u["Name"] . " - " . $u["Surname"] . " - " . $u["Email"] . "<br>";
-}
 
 $conexion->close();
 ?>
