@@ -9,7 +9,7 @@ class UserController
 
     public function __construct()   
     {
-        $dbConfig = require __DIR__ . '/../config/database.php';
+        $dbConfig = require __DIR__ . '/Jrrrd3x7/CaseHub---DAM-1/blob/main/CaseHub---DAM-1-mainInterficiesEduard--definitivo/CaseHub---DAM-1-main/config/database.php';
         require_once __DIR__ . '/../config/session.php';
 
         $this->conn = new mysqli(
