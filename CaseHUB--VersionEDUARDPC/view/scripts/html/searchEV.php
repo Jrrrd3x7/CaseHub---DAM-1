@@ -19,7 +19,7 @@
 </head>
 <body>
 <?php require_once __DIR__ . '/../php/partials/header.php'; ?>
-    <!-- BotÃƒÂ³n volver al inicio -->
+    <!-- Boton volver al inicio -->
     <section>
         <a class="return form" href="events.php"><i class="bi bi-arrow-left-circle"></i> Volver</a>
     </section>
@@ -29,7 +29,7 @@
                 <legend>Buscar Evento</legend>
                 <label for="nom">Nombre Evento</label><br>
                 <input type="text" id="nom" name="nom" placeholder="Release funda iPhone 16" minlength="3"
-                    oninvalid="this.setCustomValidity('MÃƒÂ­nim 3 carÃƒÂ cters')" oninput="this.setCustomValidity('')">
+                    oninvalid="this.setCustomValidity('Mi­nim 3 caracters')" oninput="this.setCustomValidity('')">
                 <br><br>
 
                 <label for="tipus">Tipo</label><br>
@@ -48,7 +48,7 @@
                 <br><br>
                 <label for="ciutat">Ciudad</label><br>
                 <input type="text" id="ciutat" name="ciutat" placeholder="Barcelona" pattern="[A-Za-zÃƒâ‚¬-ÃƒÂ¿ ]+"
-                    title="NomÃƒÂ©s lletres" required>
+                    title="Nomes lletres" required>
                 <br><br>
                 <button type="submit">Buscar</button>
             </fieldset>
