@@ -2,12 +2,12 @@
 require_once __DIR__ . '/../../../config/session.php';
 require_once __DIR__ . '/../../../controller/UserController.php';
 
-startAppSession(isset($_POST['remember']));
+startSession(isset($_POST['remember']));
 
 $userController = new UserController();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../html/login.html');
+    header('Location: ../html/login.php');
     exit();
 }
 
@@ -21,5 +21,5 @@ if ($result === true) {
     exit();
 }
 
-header('Location: ../html/login.html?error=' . urlencode($result));
+header('Location: ../html/login.php?error=' . urlencode($result));
 exit();
