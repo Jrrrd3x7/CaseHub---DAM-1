@@ -1,11 +1,5 @@
 @import url(main.css);
 
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 .event-form-page {
     flex: 1;
     width: min(92%, 760px);
@@ -81,7 +75,6 @@ body {
     border: 1px solid #b9c6cf;
     border-radius: 10px;
     padding: 12px 14px;
-    font-size: 16px;
     box-sizing: border-box;
     background-color: #ffffff;
     color: var(--blue-dark);
