@@ -1,4 +1,8 @@
-﻿CREATE DATABASE IF NOT EXISTS CaseHub;
+﻿--CaseHUB base de datos--
+--Eduard,Daniel,Ivan,Jordi--
+--08/04/26--
+
+CREATE DATABASE IF NOT EXISTS CaseHub;
 
 USE CaseHub;
 
