@@ -100,16 +100,7 @@
                             </select>
                             <span id="pais-help" class="helper-text">Selecciona tu pais de residencia o el asociado al perfil.</span>
                         </div>
-
-                        <div class="form-row">
-                            <label for="role">Tipo de cuenta</label>
-                            <select id="role" name="role" required aria-describedby="role-help">
-                                <option value="standard">Estandar</option>
-                                <option value="premium">Premium</option>
-                            </select>
-                            <span id="role-help" class="helper-text">La cuenta premium se mostrara como premium en tu perfil.</span>
-                        </div>
-
+                        
                         <div class="button-row">
                             <button type="submit">
                                 <i class="bi bi-person-plus"></i>
