@@ -157,27 +157,6 @@ CREATE TABLE eliminaciones_eventos (
         ON UPDATE CASCADE
 );
 
-INSERT INTO usuarios (nombre, apellidos, email, pais, telefono, rol, contrasena)
-VALUES
-('Jordi', 'Messi', 'jordi@email.com', 'ES', '+34 600111222', 'admin', 'jordi123'),
-('Daniil', 'Maximov', 'dmaximov@email.com', 'RU', '+7 9001234567', 'premium', 'dmx123');
-
-INSERT INTO tipos_evento (codigo, nombre)
-VALUES
-('release', 'Release nueva funda'),
-('colaboracion', 'Colaboracion'),
-('meet-greet', 'Meet and Greet'),
-('resistencia', 'Test de resistencia'),
-('workshop', 'Workshop'),
-('showroom', 'Showroom'),
-('concurso', 'Concurso de diseno'),
-('test-producto', 'Test de producto'),
-('feria-tecnologica', 'Feria Tecnologica'),
-('premium', 'Premium'),
-('gaming', 'Gaming'),
-('eco', 'Eco'),
-('luxury', 'Luxury');
-
 INSERT INTO eventos (
     id_usuario_creador,
     id_usuario_editor,
