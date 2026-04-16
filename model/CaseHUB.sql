@@ -157,6 +157,27 @@ CREATE TABLE eliminaciones_eventos (
         ON UPDATE CASCADE
 );
 
+INSERT INTO usuarios (nombre, apellidos, email, pais, telefono, rol, contrasena)
+VALUES
+    ('Jordi', 'Messi', 'jordi@email.com', 'ES', '+34 600111222', 'admin', 'jordi123'),
+    ('Daniil', 'Maximov', 'dmaximov@email.com', 'RU', '+7 9001234567', 'premium', 'dmx123');
+
+INSERT INTO tipos_evento (codigo, nombre)
+VALUES
+    ('release', 'Release nueva funda'),
+    ('colaboracion', 'Colaboracion'),
+    ('meet-greet', 'Meet and Greet'),
+    ('resistencia', 'Test de resistencia'),
+    ('workshop', 'Workshop'),
+    ('showroom', 'Showroom'),
+    ('concurso', 'Concurso de diseno'),
+    ('test-producto', 'Test de producto'),
+    ('feria-tecnologica', 'Feria Tecnologica'),
+    ('premium', 'Premium'),
+    ('gaming', 'Gaming'),
+    ('eco', 'Eco'),
+    ('luxury', 'Luxury');
+
 INSERT INTO eventos (
     id_usuario_creador,
     id_usuario_editor,
@@ -171,6 +192,7 @@ INSERT INTO eventos (
     ruta_imagen,
     estado
 )
+
 VALUES
 (1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'premium'), 'Fundas Premium 2026', 'Coleccion sostenible y elegante.', 'Coleccion premium con materiales sostenibles y diseno elegante.', 'Barcelona', '2026-03-15', 120, 'evento1.html', '../../assets/fundas/sakura_case.png', 'publicado'),
 (1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'gaming'), 'Fundas Gaming Antigolpes', 'Proteccion extrema para gamers.', 'Proteccion extrema para gamers con diseno ergonomico y ventilacion termica.', 'Madrid', '2026-04-10', 150, 'evento2.html', '../../assets/fundas/black_case.png', 'publicado'),
