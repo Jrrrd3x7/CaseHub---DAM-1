@@ -14,7 +14,7 @@ $cartHref = $canUseCard ? '../php/insert_card.php' : 'insert_card.php';
         <div>
             <ul>
                 <li><img src="../../assets/imagenes/logo_CaseHub.png" class="logo-image" alt="Logo CaseHUB"></li>
-                <li><a href="index.php">TOP VENTAS</a></li>
+                <li><a href="bestsellers.php">TOP VENTAS</a></li>
                 <li><a href="#">SERVICIOS</a></li>
                 <li><a href="events.php">EVENTOS</a></li>
                 <li><a href="#">PREMIUM</a></li>
@@ -40,7 +40,7 @@ $cartHref = $canUseCard ? '../php/insert_card.php' : 'insert_card.php';
                 <li id="menu-item2" class="menu-item2" style="position: relative;">
                     <a href="#" aria-label="Abrir menu de navegacion"><i class="bi bi-list"></i></a>
                     <ul id="submenu2" class="submenu2" style="position:absolute;top:100px;left:-150px;">
-                        <li class="displayed-content"><a href="index.php">TOP VENTAS</a></li>
+                        <li class="displayed-content"><a href="bestsellers.php">TOP VENTAS</a></li>
                         <li class="displayed-content"><a href="#">SERVICIOS</a></li>
                         <li class="displayed-content"><a href="events.php">EVENTOS</a></li>
                         <li class="displayed-content"><a href="#">PREMIUM</a></li>
