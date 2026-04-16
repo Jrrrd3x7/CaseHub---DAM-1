@@ -1,0 +1,182 @@
+@import url(main.css);
+
+.event-form-page {
+    flex: 1;
+    width: min(92%, 760px);
+    margin: 0 auto;
+    padding: 32px 16px 48px;
+}
+
+.event-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    color: var(--blue-base);
+    font-weight: bold;
+}
+
+.event-form-card {
+    background-color: #ffffff;
+    border: 1px solid var(--blue-base);
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(2, 81, 147, 0.08);
+    padding: 28px;
+    text-align: left;
+}
+
+.event-form-card fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.event-form-card legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--blue-base);
+    margin-bottom: 14px;
+}
+
+.event-form-intro {
+    margin: 0 0 24px;
+    line-height: 1.5;
+    color: var(--blue-gray);
+}
+
+.event-form-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.event-form-row {
+    display: grid;
+    gap: 8px;
+}
+
+.event-form-row-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.event-form-card label {
+    font-weight: bold;
+    color: var(--blue-dark);
+}
+
+.event-form-card input[type="text"],
+.event-form-card input[type="number"],
+.event-form-card input[type="date"],
+.event-form-card select,
+.event-form-card textarea {
+    width: 100%;
+    border: 1px solid #b9c6cf;
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: var(--blue-dark);
+}
+
+.event-form-card textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.event-form-card input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.event-form-card input:focus,
+.event-form-card select:focus,
+.event-form-card textarea:focus {
+    outline: 3px solid rgba(2, 81, 147, 0.2);
+    outline-offset: 2px;
+    border-color: var(--blue-base);
+}
+
+.event-form-card input:invalid:not(:placeholder-shown),
+.event-form-card textarea:invalid:not(:placeholder-shown) {
+    border-color: #c62828;
+    background-color: #fff5f5;
+}
+
+.event-helper {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--blue-gray);
+}
+
+.event-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    background-color: var(--blue-base);
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.event-submit:hover {
+    background-color: #013d70;
+}
+
+.event-submit.danger {
+    background-color: #b3261e;
+}
+
+.event-submit.danger:hover {
+    background-color: #8c1d18;
+}
+
+footer .footer-sitemap {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+footer .footer-sitemap h3,
+footer .footer-sitemap p,
+footer .footer-sitemap a {
+    color: white;
+}
+
+footer .footer-sitemap h3 {
+    margin: 0 0 12px;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px 20px;
+    flex-wrap: wrap;
+    margin: 0 0 12px;
+    padding: 0;
+}
+
+footer .footer-links li {
+    padding: 0;
+}
+
+@media (max-width: 600px) {
+    .event-form-page {
+        width: min(96%, 760px);
+        padding: 24px 12px 36px;
+    }
+
+    .event-form-card {
+        padding: 20px 16px;
+        border-radius: 12px;
+    }
+
+    .event-form-card legend {
+        font-size: 1.2rem;
+    }
+}

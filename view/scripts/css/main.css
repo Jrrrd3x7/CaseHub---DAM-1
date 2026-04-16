@@ -1,0 +1,171 @@
+/* IMPORT  BS ICONS */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+/*COLOR CLASES*/
+:root {
+    --blue-base: #025193;
+    --blue-dark: #001421;
+    --blue-gray: #475156;
+    --blue-light-gray: #657C8C;
+    --white: #ffffff;
+}
+
+header {
+    height: 150px;
+    background-color: white;
+    color: var(--blue-base);
+    font-weight: bold;
+    text-align: center;
+    border-bottom: var(--blue-dark) solid 1px;
+}
+
+body {
+    background-color: white;
+    color: var(--blue-base);
+    text-align: center;
+    margin: 0;
+}
+
+footer {
+    min-height: 100px;
+    background-color: var(--blue-base);
+    color: white;
+    text-align: center;
+    padding: 24px 16px;
+}
+
+.footer-sitemap {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-sitemap h3,
+.footer-sitemap p {
+    color: white;
+    margin: 0 0 12px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 14px 24px;
+    flex-wrap: wrap;
+    margin: 0 0 14px;
+    padding: 0;
+}
+
+.footer-links li {
+    padding: 0;
+}
+
+.footer-links a {
+    color: white;
+    font-weight: bold;
+}
+
+section {
+    background-color: white;
+    color: var(--blue-base);
+    text-align: center;
+    padding: 20px;
+}
+
+.inverted-section {
+    background-color: var(--blue-base);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+li {
+    display: inline-block;
+    padding: 10px;
+
+}
+
+li img {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--blue-base)
+}
+
+.logo-image {
+    width: 120px;
+    height: auto;
+}
+
+.displayed-content {
+    list-style: none;
+    flex: auto;
+    flex-direction: column;
+    padding: 10px;
+    min-width: 50px;
+    background-color: white;
+}
+
+.submenu1,
+.submenu2 {
+    background-color: white;
+    min-width: 50px;
+    text-align: center;
+    border: var(--blue-dark) solid 1px;
+    padding-right: 30px;
+
+}
+
+.index_background {
+    background-image: url(../../assets/imagenes/box-cover-e-custodie.png);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    background-attachment: fixed;
+}
+
+.form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.event-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.event-card {
+    display: block;
+    width: 260px;
+    background-color: white;
+    border: 1px solid var(--blue-light-gray);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.event-card img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.ver-mas {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: var(--blue-base);
+    color: white;
+    border-radius: 5px;
+}
