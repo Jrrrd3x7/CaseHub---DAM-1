@@ -24,61 +24,61 @@
         <h1>LO MAS VENDIDO</h1>
 
         <div class="event-container">
-            <a href="evento1.php" class="event-card">
+            <div href="" class="event-card">
                 <img src="../../assets/fundas/sakura_case.png" alt="Funda premium CaseHUB">
                 <h3>Fundas Premium 2026</h3>
                 <p>Coleccion sostenible y elegante.</p>
                 <span class="ver-mas">Ver mas</span>
-            </a>
+            </div>
 
-            <a href="evento2.php" class="event-card">
+            <div href="" class="event-card">
                 <img src="../../assets/fundas/black_case.png" alt="Funda gaming">
                 <h3>Fundas Gaming</h3>
                 <p>Proteccion extrema para gamers.</p>
                 <span class="ver-mas">Ver mas</span>
-            </a>
+            </div>
 
-            <a href="evento3.php" class="event-card">
+            <div href="" class="event-card">
                 <img src="../../assets/fundas/patriot_case.png" alt="Funda ecologica">
                 <h3>Fundas Eco</h3>
                 <p>Materiales reciclados.</p>
                 <span class="ver-mas">Ver mas</span>
-            </a>
+            </div>
 
-            <a href="evento4.php" class="event-card">
+            <div href="" class="event-card">
                 <img src="../../assets/fundas/mi_amor.png" alt="Funda luxury">
                 <h3>Edicion Luxury</h3>
                 <p>Diseno exclusivo.</p>
                 <span class="ver-mas">Ver mas</span>
-            </a>
+            </div>
 
-            <a href="evento5.php" class="event-card">
+            <div href="" class="event-card">
                 <img src="../../assets/fundas/shark_case.png" alt="Test resistencia">
                 <h3>Test de Resistencia</h3>
                 <p>Pruebas extremas.</p>
                 <span class="ver-mas">Ver mas</span>
-            </a>
+            </div>
 
-            <a href="evento6.php" class="event-card">
+            <div href="" class="event-card">
                 <img src="../../assets/fundas/sakura_case.png" alt="Workshop diseno">
                 <h3>Workshop Diseno</h3>
                 <p>Crea tu funda.</p>
                 <span class="ver-mas">Ver mas</span>
-            </a>
+            </div>
 
-            <a href="evento7.php" class="event-card">
+            <div href="" class="event-card">
                 <img src="../../assets/fundas/mi_amor.png" alt="Colaboracion influencer">
                 <h3>Colaboracion Influencer</h3>
                 <p>Nueva coleccion exclusiva.</p>
                 <span class="ver-mas">Ver mas</span>
-            </a>
+            </div>
 
-            <a href="evento8.php" class="event-card">
+            <div href="" class="event-card">
                 <img src="../../assets/fundas/black_case.png" alt="Feria tecnologica">
                 <h3>Feria Tecnologica</h3>
                 <p>Presentacion global.</p>
                 <span class="ver-mas">Ver mas</span>
-            </a>
+            </div>
         </div>
     </section>
 
