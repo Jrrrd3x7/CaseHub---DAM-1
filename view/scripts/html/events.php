@@ -1,9 +1,10 @@
 ﻿<?php
 require_once __DIR__ . '/../php/auth.php';
 
-$userController = appUserController();
-$currentUser = $userController->getCurrentUser();
-$isAdmin = ($currentUser['role'] ?? '') === 'admin';
+$isAdmin = false;
+if (isset($_SESSION['user']) && ($_SESSION['user']['role'] ?? '') === 'admin') {
+    $isAdmin = true;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
