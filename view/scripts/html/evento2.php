@@ -16,37 +16,21 @@
 <body>
     <?php require_once __DIR__ . '/../php/partials/header.php'; ?>
 
-    <main class="event-page">
-        <article>
-            <h2>Fundas Gaming Antigolpes</h2>
+    <article>
+    <section>
+        <h1>Disfruta de lo mejor de Michael Jackson</h1>
+        <p>El Iphone 17 pro, el móvil con los mejores altavoces del mercado, disponible en nuestra tienda de
+            Madrid.</p>
 
-            <p>
-                <strong>Fecha:</strong>
-                <time datetime="2026-04-10">10 Abril 2026</time>
-            </p>
+        <img src="../../assets/fundas/OTW.jpg" alt="mj" style="width: 30%;"><br>
+        <audio controls>
+            <source src="../../assets/audio/mj.mp3" type="audio/mpeg">
+        </audio><br>
+        <time datetime="2026-03-14">Fecha de evento: 14 de Marzo 2026</time><br><br>
+        <a href="eventos.html" class="evento">← Volver a eventos</a>
+    </section>
 
-            <section>
-                <h3>Descripcion</h3>
-                <p>Proteccion extrema para gamers con diseno ergonomico y ventilacion termica.</p>
-            </section>
-
-            <section>
-                <h3>Video</h3>
-                <video controls preload="metadata">
-                    <source src="../../assets/videos/videoplayback.mp4" type="video/mp4">
-                    Tu navegador no puede reproducir este video.
-                </video>
-            </section>
-
-            <section>
-                <h3>Audio</h3>
-                <audio controls preload="metadata">
-                    <source src="../../assets/videos/Sonido de la Naturaleza.mp3" type="audio/mp3">
-                    Tu navegador no puede reproducir este audio.
-                </audio>
-            </section>
-        </article>
-    </main>
+</article>
 
     <?php require_once __DIR__ . '/../php/partials/footer.php'; ?>
 </body>

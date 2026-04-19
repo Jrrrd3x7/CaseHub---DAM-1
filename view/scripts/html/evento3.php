@@ -16,37 +16,16 @@
 <body>
     <?php require_once __DIR__ . '/../php/partials/header.php'; ?>
 
-    <main class="event-page">
-        <article>
-            <h2>Fundas Eco Friendly</h2>
+    <article>
+    <section>
+        <h1>UAG Essential Armor</h1>
+        <p>Prueba con nosotros la nueva funda UAG Essential Armor aprobada por la NASA.</p>
+        <img src="../../assets/fundas/funda.jpg" alt="funda" style="width: 50%;"><br>
+        <time datetime="2026-03-15">Fecha de evento: 15 de Marzo 2026</time><br><br>
+        <a href="eventos.html" class="evento">← Volver a eventos</a>
+    </section>
 
-            <p>
-                <strong>Fecha:</strong>
-                <time datetime="2026-05-05">5 Mayo 2026</time>
-            </p>
-
-            <section>
-                <h3>Descripcion</h3>
-                <p>Fundas fabricadas con materiales reciclados y sostenibles.</p>
-            </section>
-
-            <section>
-                <h3>Video</h3>
-                <video controls preload="metadata">
-                    <source src="../../assets/videos/videoplayback.mp4" type="video/mp4">
-                    Tu navegador no puede reproducir este video.
-                </video>
-            </section>
-
-            <section>
-                <h3>Audio</h3>
-                <audio controls preload="metadata">
-                    <source src="../../assets/videos/Sonido de la Naturaleza.mp3" type="audio/mp3">
-                    Tu navegador no puede reproducir este audio.
-                </audio>
-            </section>
-        </article>
-    </main>
+</article>
 
     <?php require_once __DIR__ . '/../php/partials/footer.php'; ?>
 </body>

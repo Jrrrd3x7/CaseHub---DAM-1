@@ -16,37 +16,17 @@
 <body>
     <?php require_once __DIR__ . '/../php/partials/header.php'; ?>
 
-    <main class="event-page">
-        <article>
-            <h2>Fundas Luxury Edition</h2>
+    <article>
+    <section>
+        <h1>Saca tu creatividad</h1>
+        <p>Dirigete a cualquiera de nuestras tiendas y saca tu creatividad personalizando una funda para tu
+            dispositivo movil y entra en el sorteo de unos auriculares inhalambricos.</p>
+        <img src="../../assets/fundas/sakura_case.png" alt="sc" style="width: 50%;"><br>
+        <time datetime="2026-04-15">Disfruta del evento los dias 12,13,14 y 15 de Abril 2026</time><br><br>
+        <a href="eventos.html" class="evento">← Volver a eventos</a>
+    </section>
 
-            <p>
-                <strong>Fecha:</strong>
-                <time datetime="2026-06-12">12 Junio 2026</time>
-            </p>
-
-            <section>
-                <h3>Descripcion</h3>
-                <p>Edicion de lujo con acabados metalicos premium.</p>
-            </section>
-
-            <section>
-                <h3>Video</h3>
-                <video controls preload="metadata">
-                    <source src="../../assets/videos/videoplayback.mp4" type="video/mp4">
-                    Tu navegador no puede reproducir este video.
-                </video>
-            </section>
-
-            <section>
-                <h3>Audio</h3>
-                <audio controls preload="metadata">
-                    <source src="../../assets/videos/Sonido de la Naturaleza.mp3" type="audio/mp3">
-                    Tu navegador no puede reproducir este audio.
-                </audio>
-            </section>
-        </article>
-    </main>
+</article>
 
     <?php require_once __DIR__ . '/../php/partials/footer.php'; ?>
 </body>

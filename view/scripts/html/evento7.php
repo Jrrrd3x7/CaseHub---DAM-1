@@ -16,37 +16,20 @@
 <body>
     <?php require_once __DIR__ . '/../php/partials/header.php'; ?>
 
-    <main class="event-page">
-        <article>
-            <h2>Fundas Urban Style</h2>
+    <article>
+    <section>
+        <h1>Taller de Seguridad Digital</h1>
+        <p>Cómo proteger tu móvil y tus datos aprenderas a crear copias de seguridad y evitar estafas online y cómo
+            evitarlas</p>
+        <img src="../../assets/fundas/ciberseguridad.jpg" alt="mj" style="width: 70%;"><br>
+        <audio controls>
+            <source src="../../assets/audio/asc.mp3" type="audio/mpeg">
+        </audio><br>
+        <time datetime="2026-04-03">Fecha de evento: 3 de abril 2026</time><br><br>
+        <a href="eventos.html" class="evento">← Volver a eventos</a>
+    </section>
 
-            <p>
-                <strong>Fecha:</strong>
-                <time datetime="2026-09-10">10 Septiembre 2026</time>
-            </p>
-
-            <section>
-                <h3>Descripcion</h3>
-                <p>Diseno urbano moderno inspirado en streetwear.</p>
-            </section>
-
-            <section>
-                <h3>Video</h3>
-                <video controls preload="metadata">
-                    <source src="../../assets/videos/videoplayback.mp4" type="video/mp4">
-                    Tu navegador no puede reproducir este video.
-                </video>
-            </section>
-
-            <section>
-                <h3>Audio</h3>
-                <audio controls preload="metadata">
-                    <source src="../../assets/videos/Sonido de la Naturaleza.mp3" type="audio/mp3">
-                    Tu navegador no puede reproducir este audio.
-                </audio>
-            </section>
-        </article>
-    </main>
+</article>
 
     <?php require_once __DIR__ . '/../php/partials/footer.php'; ?>
 </body>

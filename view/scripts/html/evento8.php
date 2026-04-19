@@ -16,37 +16,20 @@
 <body>
     <?php require_once __DIR__ . '/../php/partials/header.php'; ?>
 
-    <main class="event-page">
-        <article>
-            <h2>Fundas Future Tech</h2>
+   <article>
+    <section>
+        <h1> Clínica del Móvil</h1>
+        <p>Consejos de uso y mantenimiento para alargar la vida de tu móvily la optimización de batería y
+            almacenamiento para mejorar su rendimiento.
+        </p>
+        <video controls style="max-width: 50%; height: auto;">
+            <source src="../../assets/videos/reparacion.mp4" type="video/mp4">
+        </video><br>
+        <time datetime="2026-04-23">Fecha de evento: 26 de abril 2026</time><br><br>
+        <a href="eventos.html" class="evento">← Volver a eventos</a>
+    </section>
 
-            <p>
-                <strong>Fecha:</strong>
-                <time datetime="2026-10-05">5 Octubre 2026</time>
-            </p>
-
-            <section>
-                <h3>Descripcion</h3>
-                <p>Diseno futurista con materiales de ultima generacion.</p>
-            </section>
-
-            <section>
-                <h3>Video</h3>
-                <video controls preload="metadata">
-                    <source src="../../assets/videos/videoplayback.mp4" type="video/mp4">
-                    Tu navegador no puede reproducir este video.
-                </video>
-            </section>
-
-            <section>
-                <h3>Audio</h3>
-                <audio controls preload="metadata">
-                    <source src="../../assets/videos/Sonido de la Naturaleza.mp3" type="audio/mp3">
-                    Tu navegador no puede reproducir este audio.
-                </audio>
-            </section>
-        </article>
-    </main>
+</article>
 
     <?php require_once __DIR__ . '/../php/partials/footer.php'; ?>
 </body>

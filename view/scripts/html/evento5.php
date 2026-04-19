@@ -16,41 +16,13 @@
 <body>
     <?php require_once __DIR__ . '/../php/partials/header.php'; ?>
 
-    <main class="event-page">
-        <a href="events.php" class="back-button" aria-label="Volver a eventos">
-            <i class="bi bi-arrow-left-circle"></i>
-        </a>
-
-        <article>
-            <h2>Fundas Transparentes Pro</h2>
-
-            <p>
-                <strong>Fecha:</strong>
-                <time datetime="2026-07-01">1 Julio 2026</time>
-            </p>
-
-            <section>
-                <h3>Descripcion</h3>
-                <p>Proteccion transparente con alta resistencia a impactos.</p>
-            </section>
-
-            <section>
-                <h3>Video</h3>
-                <video controls preload="metadata">
-                    <source src="../../assets/videos/videoplayback.mp4" type="video/mp4">
-                    Tu navegador no puede reproducir este video.
-                </video>
-            </section>
-
-            <section>
-                <h3>Audio</h3>
-                <audio controls preload="metadata">
-                    <source src="../../assets/videos/Sonido de la Naturaleza.mp3" type="audio/mp3">
-                    Tu navegador no puede reproducir este audio.
-                </audio>
-            </section>
-        </article>
-    </main>
+    <section>
+        <h1>Participa en nuetro torneo gaming</h1>
+        <p>El ganador ganara un pase para STEAM y unos cascos gaming y un teclado y raton gaming</p>
+        <img src="../../assets/fundas/Designer.png" alt="mj" style="width: 70%;"><br>
+        <time datetime="2026-05-14">Dia 14 y 15 de Mayo 2026</time><br><br>
+        <a href="eventos.html" class="evento">← Volver a eventos</a>
+    </section>
 
     <?php require_once __DIR__ . '/../php/partials/footer.php'; ?>
 </body>
