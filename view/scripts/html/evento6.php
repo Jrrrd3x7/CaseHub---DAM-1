@@ -22,7 +22,7 @@
             de setups reales.</p>
         <img src="../../assets/fundas/setup.jpg " alt="mj" style="width: 70%;"><br>
         <time datetime="2026-05-2">Fecha de evento: 2 de mayo 2026</time><br><br>
-        <a href="eventos.html" class="evento">← Volver a eventos</a>
+        <a href="eventos.php" class="evento">← Volver a eventos</a>
     </section>
 
     <?php require_once __DIR__ . '/../php/partials/footer.php'; ?>
