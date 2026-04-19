@@ -16,37 +16,22 @@
 <body>
     <?php require_once __DIR__ . '/../php/partials/header.php'; ?>
 
-    <main class="event-page">
-        <article>
-            <h2>Fundas Premium 2026</h2>
+     <article>
+        <section>
+            <h1>OPPO Reno 14 Series 5G</h1>
+            <p>Descubre el nuevo OPPO Reno 14 Series 5G con increíbles mejoras en cámara y
+                rendimiento con la presencia de Lamine Yamal en nuestra tienda de Barcelona.</p>
 
-            <p>
-                <strong>Fecha:</strong>
-                <time datetime="2026-03-15">15 Marzo 2026</time>
-            </p>
 
-            <section>
-                <h3>Descripcion</h3>
-                <p>Coleccion premium con materiales sostenibles y diseno elegante.</p>
-            </section>
+            <video controls style="max-width: 50%; height: auto;">
+                <source src="../../assets/videos/oppoly.mp4" type="video/mp4">
+            </video><br>
+            <time datetime="2026-04-23">Fecha de evento: 23 de abril 2026</time><br><br>
+            <a href="events.php" class="evento">← Volver a eventos</a>
+        </section>
 
-            <section>
-                <h3>Video</h3>
-                <video controls preload="metadata">
-                    <source src="../../assets/videos/videoplayback.mp4" type="video/mp4">
-                    Tu navegador no puede reproducir este video.
-                </video>
-            </section>
-
-            <section>
-                <h3>Audio</h3>
-                <audio controls preload="metadata">
-                    <source src="../../assets/videos/Sonido de la Naturaleza.mp3" type="audio/mp3">
-                    Tu navegador no puede reproducir este audio.
-                </audio>
-            </section>
-        </article>
-    </main>
+    </article>
+    <script src="../js/menus_desplegables.js"></script>
 
     <?php require_once __DIR__ . '/../php/partials/footer.php'; ?>
 </body>
