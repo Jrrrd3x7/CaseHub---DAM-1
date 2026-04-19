@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/../php/auth.php'; requireRole('standard'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,11 +22,7 @@
  <section class="index_background"></section>
 
     <section>
-        <h1>Top Ventas</h1>
-    </section>
-
-    <section>
-        <h2>Top Ventas</h2>
+        <h1>LO MAS VENDIDO</h1>
 
         <div class="event-container">
             <a href="evento1.php" class="event-card">
