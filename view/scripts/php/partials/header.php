@@ -13,9 +13,11 @@ $cartHref = $canUseCard ? '../php/insert_card.php' : 'insert_card.php';
     <nav class="nav-pc">
         <div>
             <ul>
-                <a href="index.html">
+                <li>
+                    <a href="index.html">
                         <img src="../../assets/imagenes/logo_CaseHub.png" class="logo-image" alt="Logo de CaseHUB">
                     </a>
+                </li>
                 <li><a href="bestsellers.php">TOP VENTAS</a></li>
                 <li><a href="#">SERVICIOS</a></li>
                 <li><a href="events.php">EVENTOS</a></li>
