@@ -1,13 +1,5 @@
 
 
-header{
-    height: 150px;
-    background-color: white;
-    color:#025193;
-    font-weight: bold;
-    text-align: center;
-    border-bottom: #001421 solid 1px;
-}
 .evento{
     padding: 8px 12px;
     background-color:white;
@@ -23,15 +15,7 @@ body{
     color: #025193;
     text-align: center;
 }
-li{
-    display: inline-block;
-    padding: 10px;
-    
-}
-li img{
-    vertical-align: middle;
-    margin-left: 10px;
-}
+
 
 article{
     padding: 30px;
@@ -58,11 +42,7 @@ p{
     color: black;
 }
 
-/* imagen */
-img{
-    margin-bottom: 15px;
-    border-radius: 6px;
-}
+
 
 /* audio */
 audio{
