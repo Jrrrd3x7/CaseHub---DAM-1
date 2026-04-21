@@ -1,307 +1,273 @@
+/* =========================
+   IMPORTS
+========================= */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+/* =========================
+   RESET BÁSICO
+========================= */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
-
 
 body {
-
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+  color: var(--blue-base);
 }
 
+/* =========================
+   TIPOGRAFÍA GLOBAL
+========================= */
+h1 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: black;
+}
+
+time {
+  font-size: 14px;
+  color: #475156;
+}
+
+/* =========================
+   HEADER
+========================= */
 header {
-    min-height: 150px;
-    text-align: center;
-    border-bottom: 1px solid var(--blue-dark);
+  min-height: 150px;
+  background-color: white;
+  color: var(--blue-base);
+  text-align: center;
+  border-bottom: 1px solid var(--blue-dark);
+  font-weight: bold;
 }
 
 header nav {
-    width: min(100%, 1200px);
-    margin: 0 auto;
-}
-
-header ul {
-    margin: 0;
-    padding: 0;
-}
-
-.nav-pc ul,
-.nav-phone ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    flex-wrap: wrap;
-}
-
-li {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    list-style: none;
-}
-
-li img {
-    vertical-align: middle;
-    margin-left: 10px;
-}
-
-a {
-    text-decoration: none;
-    color: var(--blue-base);
+  width: min(100%, 1200px);
+  margin: 0 auto;
 }
 
 header a {
-    text-decoration: none;
-    color: var(--blue-base);
-    margin: 5px 10px;
-    font-weight: bold;
-    font-size: 14px;
-    display: inline-block;
+  text-decoration: none;
+  color: var(--blue-base);
+  margin: 5px 10px;
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-block;
 }
 
+/* =========================
+   NAV
+========================= */
+nav ul,
+.nav-pc ul,
+.nav-phone ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  list-style: none;
+}
+
+li img {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+/* =========================
+   LOGO
+========================= */
 .logo-image {
-    width: 120px;
-    height: auto;
+  width: 120px;
+  height: auto;
 }
 
-.displayed-content {
-    list-style: none;
-    flex: auto;
-    flex-direction: column;
-    padding: 10px;
-    min-width: 50px;
-    background-color: var(--white);
+/* =========================
+   LINKS GENERALES
+========================= */
+a {
+  text-decoration: none;
+  color: #025193;
 }
 
+/* =========================
+   INDEX BACKGROUND
+========================= */
+.index_background {
+  height: 250px;
+  background-image: url("../../assets/imagenes/box-cover-e-custodie.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* =========================
+   EVENTOS GRID
+========================= */
+.event-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.event-card {
+  width: 260px;
+  background-color: white;
+  border: 1px solid #001421;
+  border-radius: 8px;
+  padding: 15px;
+  color: #025193;
+  text-decoration: none;
+}
+
+.event-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   BOTONES EVENTO
+========================= */
+.evento {
+  padding: 8px 12px;
+  background-color: white;
+  color: #025193;
+  border: 2px solid #025193;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.eventoD {
+  padding: 8px 12px;
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+section {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #001421;
+  border-radius: 8px;
+}
+
+article {
+  padding: 30px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  width: 100%;
+  min-height: 100px;
+  background-color: #025193;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: auto;
+  padding: 20px;
+}
+
+footer a {
+  color: white;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 5px;
+}
+
+/* =========================
+   SUBMENÚS (solo si existen en header.php)
+========================= */
 .submenu1,
 .submenu2 {
-    background-color: var(--white);
-    min-width: 170px;
-    text-align: center;
-    border: 1px solid var(--blue-dark);
-    padding: 8px 18px 8px 8px;
-    z-index: 10;
-    box-shadow: 0 10px 24px rgba(0, 20, 33, 0.12);
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #001421;
 }
 
-main.event-page {
-    flex: 1;
-    width: min(92%, 920px);
-    margin: 40px auto 56px;
-    padding: 0 16px;
+.menu-item1:hover .submenu1,
+.menu-item2:hover .submenu2 {
+  display: block;
 }
 
-.event-page article {
-    background-color: var(--white);
-    border: 1px solid var(--blue-base);
-    border-radius: 16px;
-    padding: 52px 28px 28px;
-    position: relative;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(2, 81, 147, 0.08);
+/* =========================
+   ICONOS
+========================= */
+i {
+  font-size: 18px;
 }
 
-.event-page h2 {
-    font-size: 1.2rem;
-    color: var(--blue-base);
-    background-color: var(--white);
-    padding: 0 14px;
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-    white-space: nowrap;
-    text-decoration: none;
-    z-index: 1;
-    line-height: 1.2;
+/* =========================
+   RESPONSIVE
+========================= */
+.nav-phone {
+  display: none;
 }
 
-.event-page p {
-    margin: 0;
-    line-height: 1.6;
-}
+@media (max-width: 768px) {
+  .nav-pc {
+    display: none;
+  }
 
-.event-page section {
-    margin-top: 28px;
-    padding-top: 18px;
-    border-top: 1px solid #eee;
-}
-
-.event-page h3 {
-    margin: 0 0 14px;
-    font-size: 1.05rem;
-}
-
-.event-page video,
-.event-page audio {
-    width: 100%;
-    max-width: 100%;
+  .nav-phone {
     display: block;
-    margin: 0 auto;
-}
+  }
 
-.event-page video {
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 12px;
-    background-color: var(--blue-dark);
-}
+  section {
+    max-width: 90%;
+  }
 
-.event-page audio {
-    min-height: 54px;
-}
-
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 20px;
-    font-size: 26px;
-}
-
-footer {
-    width: 100%;
-    min-height: 100px;
-    background-color: var(--blue-base);
-    color: var(--white);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: auto;
-    padding: 20px;
-}
-
-footer .footer-sitemap {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-footer .footer-sitemap h3,
-footer .footer-sitemap p,
-footer .footer-sitemap a {
-    color: var(--white);
-}
-
-footer .footer-sitemap h3 {
-    margin: 0 0 12px;
-}
-
-footer .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 12px 22px;
-    flex-wrap: wrap;
-    margin: 0 0 12px;
-    padding: 0;
-}
-
-footer .footer-links li {
-    padding: 0;
-}
-
-footer p {
-    margin: 0;
-    color: var(--white);
-}
-
-@media (min-width: 1025px) {
-    header {
-        padding: 0 24px;
-    }
-
-    .nav-pc ul {
-        min-height: 148px;
-    }
-
-    .event-page article {
-        padding: 56px 40px 32px;
-    }
-
-    .event-page video,
-    .event-page audio {
-        max-width: 760px;
-    }
-}
-
-@media (max-width: 1024px) {
-    header {
-        height: auto;
-        padding: 12px 16px 18px;
-    }
-
-    .nav-phone ul {
-        justify-content: space-between;
-        gap: 12px;
-    }
-
-    .nav-phone li {
-        padding: 6px;
-    }
-
-    .logo-image {
-        width: 100px;
-    }
-
-    .submenu2 {
-        right: 0;
-        left: auto !important;
-        top: 64px !important;
-    }
-
-    main.event-page {
-        width: min(96%, 760px);
-        margin: 28px auto 42px;
-        padding: 0 12px;
-    }
-
-    header a {
-        font-size: 13px;
-        margin: 4px;
-    }
-
-    .event-page article {
-        padding: 44px 20px 22px;
-    }
-}
-
-@media (max-width: 600px) {
-    .event-page h2 {
-        font-size: 1rem;
-        width: calc(100% - 32px);
-        white-space: normal;
-        top: -24px;
-    }
-
-    .event-page article {
-        padding: 48px 14px 18px;
-        border-radius: 12px;
-    }
-
-    .event-page section {
-        margin-top: 22px;
-        padding-top: 14px;
-    }
-
-    .event-page h3 {
-        font-size: 1rem;
-    }
-
-    .back-button {
-        margin-bottom: 16px;
-        font-size: 24px;
-    }
-
-    footer {
-        min-height: 84px;
-        padding: 16px;
-    }
+  .event-card {
+    width: 90%;
+  }
 }

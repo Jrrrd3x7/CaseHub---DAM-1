@@ -26,7 +26,7 @@
             <source src="../../assets/videos/reparacion.mp4" type="video/mp4">
         </video><br>
         <time datetime="2026-04-23">Fecha de evento: 26 de abril 2026</time><br><br>
-        <a href="eventos.php" class="evento">← Volver a eventos</a>
+        <a href="events.php" class="evento">← Volver a eventos</a>
     </section>
 
 </article>

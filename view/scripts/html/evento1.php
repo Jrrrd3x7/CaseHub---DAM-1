@@ -27,7 +27,7 @@
                 <source src="../../assets/videos/oppoly.mp4" type="video/mp4">
             </video><br>
             <time datetime="2026-04-23">Fecha de evento: 23 de abril 2026</time><br><br>
-            <a href="../events.php" class="evento">← Volver a eventos</a>
+            <a href="events.php" class="evento">← Volver a eventos</a>
         </section>
 
     </article>

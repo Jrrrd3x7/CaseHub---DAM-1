@@ -26,7 +26,7 @@
             <source src="../../assets/audio/asc.mp3" type="audio/mpeg">
         </audio><br>
         <time datetime="2026-04-03">Fecha de evento: 3 de abril 2026</time><br><br>
-        <a href="eventos.php" class="evento">← Volver a eventos</a>
+        <a href="events.php" class="evento">← Volver a eventos</a>
     </section>
 
 </article>
