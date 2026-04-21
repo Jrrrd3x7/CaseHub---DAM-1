@@ -27,7 +27,7 @@ if (isset($_SESSION['user']) && ($_SESSION['user']['role'] ?? '') === 'admin') {
     <section class="index_background"></section>
 
     <section>
-        <h1>AGENDA EVENTOS 2026</h1>
+        <h1>AGENDA EVENTOS 92026</h1>
     </section>
 
         <div class="event-container">
