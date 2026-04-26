@@ -19,7 +19,7 @@
 <?php require_once __DIR__ . '/../php/partials/header.php'; ?>
     <section class="index_background"></section>
     <section>
-        <h1>CASEHUB</h1>
+        <h1>CASE HUB</h1>
     </section>
     <section>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab debitis pariatur repellendus,
