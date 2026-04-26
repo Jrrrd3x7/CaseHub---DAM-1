@@ -277,5 +277,71 @@ class UserController
 
         return (bool) $stmt->fetch();
     }
+    public function updateUser(
+        int $id,
+        string $name,
+        string $surname,
+        string $email,
+        string $country,
+        string $phone = ''
+    ) {
+        $name = trim($name);
+        $surname = trim($surname);
+        $email = trim($email);
+        $country = trim($country);
+        $phone = trim($phone);
+
+        if ($name === '' || $surname === '' || $email === '' || $country === '') {
+            return "Todos los campos obligatorios deben estar rellenados.";
+        }
+
+        // Evitar email duplicado
+        $stmt = $this->conn->prepare(
+            "SELECT id FROM usuarios WHERE email = :email AND id != :id"
+        );
+        $stmt->execute([
+            ':email' => $email,
+            ':id' => $id
+        ]);
+
+        if ($stmt->fetch()) {
+            return "El correo ya está en uso.";
+        }
+
+        $sql = "UPDATE usuarios 
+            SET nombre = :nombre,
+                apellidos = :apellidos,
+                email = :email,
+                pais = :pais";
+
+        $params = [
+            ':nombre' => $name,
+            ':apellidos' => $surname,
+            ':email' => $email,
+            ':pais' => $country,
+            ':id' => $id
+        ];
+
+        if ($this->usuariosHasTelefono) {
+            $sql .= ", telefono = :telefono";
+            $params[':telefono'] = $phone;
+        }
+
+        $sql .= " WHERE id = :id";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute($params);
+
+        // refrescar sesión
+        $_SESSION['user_name'] = $name;
+        $_SESSION['user_surname'] = $surname;
+        $_SESSION['user_email'] = $email;
+        $_SESSION['user_country'] = $country;
+        if ($this->usuariosHasTelefono) {
+            $_SESSION['user_phone'] = $phone;
+        }
+
+        return true;
+    }
 }
 
