@@ -101,14 +101,14 @@ $userRole = $user['role'] ?? 'standard';
 
                 <div class="account-actions">
 
-                    <a class="button-link" href="editProfile.php">Editar datos personales</a>
+                    <a class="button-link" href="../html/editProfile.php">Editar datos personales</a>
                     <a class="button-link" href="../html/events.php">Ver eventos</a>
                     <?php if ($isAdmin): ?>
-                        <a class="button-link" href="createEV.php">Crear evento</a>
+                        <a class="button-link" href="../html/createEV.php">Crear evento</a>
                     <?php else: ?>
-                        <a class="button-link" href="insert_card.php">Gestionar pago</a>
+                        <a class="button-link" href="../html/insert_card.php">Gestionar pago</a>
                     <?php endif; ?>
-                    <a class="button-link" href="logout.php">Cerrar sesion</a>
+                    <a class="button-link" href="../html/logout.php">Cerrar sesion</a>
                 </div>
 
         </section>
