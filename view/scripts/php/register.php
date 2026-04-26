@@ -28,7 +28,7 @@ if ($password !== $passwordConfirm) {
 $result = $userController->register($name, $surname, $email, $country, $phone, $password, $role);
 
 if ($result === true) {
-    header('Location: account.php');
+    header('Location: ../html/account.php');
     exit();
 }
 
