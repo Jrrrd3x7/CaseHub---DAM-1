@@ -12,18 +12,15 @@ class UserController
         $dbConfig = require __DIR__ . '/../config/database.php';
         require_once __DIR__ . '/../config/session.php';
 
-        $this->conn = new mysqli(
-            $dbConfig['host'],
+        $this->conn = new PDO(
+            "mysql:host={$dbConfig['host']};dbname={$dbConfig['database']};charset=utf8mb4",
             $dbConfig['username'],
             $dbConfig['password'],
-            $dbConfig['database'],
-            $dbConfig['port']
+            [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            ]
         );
-        $this->conn->set_charset('utf8mb4');
-
-        if ($this->conn->connect_error) {
-            die("Error de conexion: " . $this->conn->connect_error);
-        }
 
         $this->ensureUserRoleColumn();
         $this->usuariosHasTelefono = $this->tableHasColumn('usuarios', 'telefono');
@@ -44,61 +41,64 @@ class UserController
             return "Todos los campos son obligatorios.";
         }
 
-        $checkStmt = $this->conn->prepare("SELECT id FROM usuarios WHERE email = ?");
-        $checkStmt->bind_param("s", $email);
-        $checkStmt->execute();
-        $existingUser = $checkStmt->get_result();
+        $checkStmt = $this->conn->prepare(
+            "SELECT id FROM usuarios WHERE email = :email"
+        );
+        $checkStmt->execute([':email' => $email]);
 
-        if ($existingUser->num_rows > 0) {
+        if ($checkStmt->fetch()) {
             return "Ya existe una cuenta con ese correo.";
         }
 
+        if ($this->usuariosHasTelefono && $phone === '') {
+            return "El telefono es obligatorio.";
+        }
+
+
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
+
+        $sql = "INSERT INTO usuarios (nombre, apellidos, email, pais, contrasena";
+        $values = "VALUES (:nombre, :apellidos, :email, :pais, :contrasena";
+
+        $params = [
+            ':nombre' => $name,
+            ':apellidos' => $surname,
+            ':email' => $email,
+            ':pais' => $country,
+            ':contrasena' => $passwordHash
+        ];
+
         if ($this->usuariosHasTelefono) {
-            if ($phone === '') {
-                return "El telefono es obligatorio.";
-            }
-
-            if ($this->usuariosHasRol) {
-                $stmt = $this->conn->prepare(
-                    "INSERT INTO usuarios (nombre, apellidos, email, pais, telefono, rol, contrasena) VALUES (?, ?, ?, ?, ?, ?, ?)"
-                );
-                $stmt->bind_param("sssssss", $name, $surname, $email, $country, $phone, $role, $passwordHash);
-            } else {
-                $stmt = $this->conn->prepare(
-                    "INSERT INTO usuarios (nombre, apellidos, email, pais, telefono, contrasena) VALUES (?, ?, ?, ?, ?, ?)"
-                );
-                $stmt->bind_param("ssssss", $name, $surname, $email, $country, $phone, $passwordHash);
-            }
-        } else {
-            if ($this->usuariosHasRol) {
-                $stmt = $this->conn->prepare(
-                    "INSERT INTO usuarios (nombre, apellidos, email, pais, rol, contrasena) VALUES (?, ?, ?, ?, ?, ?)"
-                );
-                $stmt->bind_param("ssssss", $name, $surname, $email, $country, $role, $passwordHash);
-            } else {
-                $stmt = $this->conn->prepare(
-                    "INSERT INTO usuarios (nombre, apellidos, email, pais, contrasena) VALUES (?, ?, ?, ?, ?)"
-                );
-                $stmt->bind_param("sssss", $name, $surname, $email, $country, $passwordHash);
-            }
+            $sql .= ", telefono";
+            $values .= ", :telefono";
+            $params[':telefono'] = $phone;
         }
 
-        if (!$stmt->execute()) {
-            return "No se pudo registrar el usuario: " . $stmt->error;
+        if ($this->usuariosHasRol) {
+            $sql .= ", rol";
+            $values .= ", :rol";
+            $params[':rol'] = $role;
         }
+
+        $sql .= ") " . $values . ")";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute($params);
+
+        $userId = $this->conn->lastInsertId();
 
         session_regenerate_id(true);
-        $_SESSION['user_id'] = $stmt->insert_id;
+        $_SESSION['user_id'] = $userId;
         $_SESSION['user_name'] = $name;
         $_SESSION['user_surname'] = $surname;
         $_SESSION['user_email'] = $email;
         $_SESSION['user_country'] = $country;
         $_SESSION['user_phone'] = $this->usuariosHasTelefono ? $phone : '';
         $_SESSION['user_role'] = $this->usuariosHasRol ? $role : 'standard';
+
         $this->storeRememberCookies([
-            'id' => $stmt->insert_id,
+            'id' => $userId,
             'nombre' => $name,
             'apellidos' => $surname,
             'email' => $email,
@@ -111,6 +111,7 @@ class UserController
         return true;
     }
 
+
     public function login($email, $password)
     {
         $email = trim($email);
@@ -119,22 +120,27 @@ class UserController
             return "Debes rellenar correo y contrasena.";
         }
 
-        $stmt = $this->conn->prepare("SELECT * FROM usuarios WHERE email = ?");
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
 
-        if ($result->num_rows === 0) {
+        $stmt = $this->conn->prepare(
+            "SELECT * FROM usuarios WHERE email = :email"
+        );
+
+
+        $stmt->execute([':email' => $email]);
+        $user = $stmt->fetch();
+
+
+
+        if (!$user) {
             return "Usuario no encontrado.";
         }
 
-        $user = $result->fetch_assoc();
-        $storedPassword = $user['contrasena'];
-        $validPassword = password_verify($password, $storedPassword) || $password === $storedPassword;
 
-        if (!$validPassword) {
+
+        if (!password_verify($password, $user['contrasena'])) {
             return "Contrasena incorrecta.";
         }
+
 
         session_regenerate_id(true);
         $_SESSION['user_id'] = $user['id'];
@@ -152,15 +158,10 @@ class UserController
     public function logout()
     {
         $_SESSION = [];
-
-        if (ini_get('session.use_cookies')) {
-            $params = session_get_cookie_params();
-            setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
-        }
-
         $this->clearRememberCookies();
         session_destroy();
     }
+
 
     public function isLogged()
     {
@@ -184,12 +185,16 @@ class UserController
         ];
     }
 
+
     private function ensureUserRoleColumn(): void
     {
         if (!$this->tableHasColumn('usuarios', 'rol')) {
-            $this->conn->query("ALTER TABLE usuarios ADD COLUMN rol VARCHAR(20) NOT NULL DEFAULT 'standard' AFTER pais");
+            $this->conn->exec(
+                "ALTER TABLE usuarios ADD COLUMN rol VARCHAR(20) NOT NULL DEFAULT 'standard' AFTER pais"
+            );
         }
     }
+
 
     private function restoreSessionFromCookies(): void
     {
@@ -197,30 +202,36 @@ class UserController
             return;
         }
 
-        $userId = isset($_COOKIE['casehub_user_id']) ? (int) $_COOKIE['casehub_user_id'] : 0;
+
+        $userId = (int) ($_COOKIE['casehub_user_id'] ?? 0);
         $rememberToken = $_COOKIE['casehub_remember'] ?? '';
 
         if ($userId <= 0 || $rememberToken === '') {
             return;
         }
 
-        $stmt = $this->conn->prepare("SELECT * FROM usuarios WHERE id = ?");
-        $stmt->bind_param("i", $userId);
-        $stmt->execute();
-        $result = $stmt->get_result();
 
-        if ($result->num_rows === 0) {
+
+        $stmt = $this->conn->prepare(
+            "SELECT * FROM usuarios WHERE id = :id"
+        );
+        $stmt->execute([':id' => $userId]);
+        $user = $stmt->fetch();
+
+        if (!$user) {
             $this->clearRememberCookies();
             return;
         }
 
-        $user = $result->fetch_assoc();
+
+
         $expectedToken = $this->buildRememberToken($user);
 
         if (!hash_equals($expectedToken, $rememberToken)) {
             $this->clearRememberCookies();
             return;
         }
+
 
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['nombre'];
@@ -245,21 +256,26 @@ class UserController
         setcookie('casehub_remember', '', $expired);
     }
 
+
     private function buildRememberToken(array $user): string
     {
-        $userId = (string) ($user['id'] ?? '');
-        $email = (string) ($user['email'] ?? '');
-        $passwordHash = (string) ($user['contrasena'] ?? '');
-
-        return hash_hmac('sha256', $userId . '|' . $email . '|' . $passwordHash, caseHubRememberSecret());
+        return hash_hmac(
+            'sha256',
+            $user['id'] . '|' . $user['email'] . '|' . $user['contrasena'],
+            caseHubRememberSecret()
+        );
     }
+
+
 
     private function tableHasColumn(string $table, string $column): bool
     {
-        $table = $this->conn->real_escape_string($table);
-        $column = $this->conn->real_escape_string($column);
-        $result = $this->conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
+        $stmt = $this->conn->prepare(
+            "SHOW COLUMNS FROM `$table` LIKE :column"
+        );
+        $stmt->execute([':column' => $column]);
 
-        return $result !== false && $result->num_rows > 0;
+        return (bool) $stmt->fetch();
     }
 }
+
