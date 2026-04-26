@@ -65,14 +65,7 @@ header nav {
   margin: 0 auto;
 }
 
-header a {
-  text-decoration: none;
-  color: var(--blue-base);
-  margin: 5px 10px;
-  font-weight: bold;
-  font-size: 14px;
-  display: inline-block;
-}
+
 
 /* =========================
    NAV
@@ -89,6 +82,11 @@ nav ul,
   gap: 6px;
   flex-wrap: wrap;
 }
+
+ul li a {
+    color: #025193;
+}
+
 
 li {
   display: inline-flex;
@@ -111,13 +109,6 @@ li img {
   height: auto;
 }
 
-/* =========================
-   LINKS GENERALES
-========================= */
-a {
-  text-decoration: none;
-  color: #025193;
-}
 
 /* =========================
    INDEX BACKGROUND
@@ -139,15 +130,7 @@ a {
   gap: 15px;
 }
 
-.event-card {
-  width: 260px;
-  background-color: white;
-  border: 1px solid #001421;
-  border-radius: 8px;
-  padding: 15px;
-  color: #025193;
-  text-decoration: none;
-}
+
 
 .event-card img {
   width: 100%;
@@ -157,10 +140,8 @@ a {
   margin-bottom: 10px;
 }
 
-/* =========================
-   BOTONES EVENTO
-========================= */
-.evento {
+
+a.evento {
   padding: 8px 12px;
   background-color: white;
   color: #025193;
@@ -178,9 +159,6 @@ a {
   cursor: pointer;
 }
 
-/* =========================
-   SECCIONES
-========================= */
 section {
   max-width: 600px;
   margin: 20px auto;
@@ -194,9 +172,6 @@ article {
   padding: 30px;
 }
 
-/* =========================
-   FOOTER
-========================= */
 footer {
   width: 100%;
   min-height: 100px;
@@ -224,9 +199,6 @@ footer a {
   margin: 5px;
 }
 
-/* =========================
-   SUBMENÚS (solo si existen en header.php)
-========================= */
 .submenu1,
 .submenu2 {
   display: none;
@@ -240,16 +212,11 @@ footer a {
   display: block;
 }
 
-/* =========================
-   ICONOS
-========================= */
 i {
   font-size: 18px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
 .nav-phone {
   display: none;
 }
