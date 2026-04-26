@@ -5,7 +5,7 @@
             <li><a href="index.php">Inicio</a></li>
             <li><a href="events.php">Eventos</a></li>
             <li><a href="evento1.php">Evento actual</a></li>
-            <li><a href="../php/createEV.php">Crear evento</a></li>
+            <li><a href="createEV.php">Crear evento</a></li>
             <li><a href="login.php">Iniciar sesion</a></li>
             <li><a href="account.php">Perfil</a></li>
         </ul>
