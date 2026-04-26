@@ -17,7 +17,7 @@ $password = $_POST['password'] ?? '';
 $result = $userController->login($email, $password);
 
 if ($result === true) {
-    header('Location: profile.php');
+    header('Location: ../html/account.php');
     exit();
 }
 
