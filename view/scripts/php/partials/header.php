@@ -27,11 +27,11 @@ $cartHref = $canUseCard ? '../php/insert_card.php' : 'insert_card.php';
                     <a href="#" aria-label="Abrir menu de usuario"><i class="bi bi-person"></i></a>
                     <ul id="submenu1" class="submenu1" style="position:absolute;top:40px;left:-100px;">
                         <?php if ($isLogged): ?>
-                            <li class="displayed-content"><a href="../php/account.php">PERFIL</a></li>
+                            <li class="displayed-content"><a href="../html/account.php">PERFIL</a></li>
                             <li class="displayed-content"><a href="../php/logout.php">CERRAR SESION</a></li>
                         <?php else: ?>
                             <li class="displayed-content"><a href="login.php">INICIAR SESION</a></li>
-                            <li class="displayed-content"><a href="create_account.php">REGISTRAR CUENTA</a></li>
+                            <li class="displayed-content"><a href="../html/create_account.php">REGISTRAR CUENTA</a></li>
                         <?php endif; ?>
                     </ul>
                 </li>
@@ -49,11 +49,11 @@ $cartHref = $canUseCard ? '../php/insert_card.php' : 'insert_card.php';
                         <li class="displayed-content"><a href="events.php">EVENTOS</a></li>
                         <li class="displayed-content"><a href="#">PREMIUM</a></li>
                         <?php if ($isLogged): ?>
-                            <li class="displayed-content"><a href="../php/account.php">PERFIL</a></li>
+                            <li class="displayed-content"><a href="../html/account.php">PERFIL</a></li>
                             <li class="displayed-content"><a href="../php/logout.php">CERRAR SESION</a></li>
                         <?php else: ?>
-                            <li class="displayed-content"><a href="login.php">INICIAR SESION</a></li>
-                            <li class="displayed-content"><a href="create_account.php">REGISTRAR CUENTA</a></li>
+                            <li class="displayed-content"><a href="../html/login.php">INICIAR SESION</a></li>
+                            <li class="displayed-content"><a href="../html/create_account.php">REGISTRAR CUENTA</a></li>
                         <?php endif; ?>
                     </ul>
                     <img src="../../assets/imagenes/logo_CaseHub.png" class="logo-image" alt="Logo CaseHUB">
