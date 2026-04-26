@@ -10,6 +10,12 @@
     --white: #ffffff;
 }
 
+ul li a {
+    color: #025193;
+}
+
+
+
 header {
     height: 150px;
     background-color: white;
@@ -88,10 +94,7 @@ li img {
     margin-left: 10px;
 }
 
-a {
-    text-decoration: none;
-    color: var(--blue-base)
-}
+
 
 .logo-image {
     width: 120px;
@@ -117,11 +120,13 @@ a {
 
 }
 
+
+
 .index_background {
     background-image: url(../../assets/imagenes/box-cover-e-custodie.png);
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 100px;
     background-attachment: fixed;
 }
 
