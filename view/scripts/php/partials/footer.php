@@ -7,7 +7,7 @@
             <li><a href="evento1.php">Evento actual</a></li>
             <li><a href="../php/createEV.php">Crear evento</a></li>
             <li><a href="login.php">Iniciar sesion</a></li>
-            <li><a href="../php/account.php">Perfil</a></li>
+            <li><a href="account.php">Perfil</a></li>
         </ul>
         <p>2025 CaseHUB</p>
     </div>
