@@ -374,5 +374,12 @@ class UserController
 
     return true;
 }
+public function deleteUser(int $userId): bool
+{
+    $stmt = $this->conn->prepare(
+        "DELETE FROM usuarios WHERE id = :id"
+    );
+    return $stmt->execute([':id' => $userId]);
+}
 }
 
