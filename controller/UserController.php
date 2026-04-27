@@ -343,5 +343,36 @@ class UserController
 
         return true;
     }
+    public function updatePassword(int $userId, string $currentPassword, string $newPassword)
+{
+    // Insertar contraseña
+    $stmt = $this->conn->prepare(
+        "SELECT contrasena FROM usuarios WHERE id = :id"
+    );
+    $stmt->execute([':id' => $userId]);
+    $user = $stmt->fetch();
+
+    if (!$user) {
+        return "Usuario no encontrado.";
+    }
+
+    // Verifico la contraseña
+    if (!password_verify($currentPassword, $user['contrasena'])) {
+        return "La contraseña actual no es correcta.";
+    }
+
+    // Guardar nueva contraseña
+    $newHash = password_hash($newPassword, PASSWORD_DEFAULT);
+
+    $stmt = $this->conn->prepare(
+        "UPDATE usuarios SET contrasena = :password WHERE id = :id"
+    );
+    $stmt->execute([
+        ':password' => $newHash,
+        ':id' => $userId
+    ]);
+
+    return true;
+}
 }
 
