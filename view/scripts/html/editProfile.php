@@ -59,9 +59,9 @@ if ($roleValue === 'admin') {
     <script src="../js/menus_desplegables.js"></script>
 
     <main class="form-page">
-        <a class="back-link" href="../html/index.php">
+        <a class="back-link" href="../html/account.php">
             <i class="bi bi-arrow-left-circle"></i>
-            <span>Volver al inicio</span>
+            <span>Volver</span>
         </a>
         <h3>Editar datos personales</h3>
 
