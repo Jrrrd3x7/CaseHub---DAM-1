@@ -108,7 +108,7 @@ $userRole = $user['role'] ?? 'standard';
                     <?php else: ?>
                         <a class="button-link" href="../html/insert_card.php">Gestionar pago</a>
                     <?php endif; ?>
-                    <a class="button-link" href="../html/logout.php">Cerrar sesion</a>
+                    <a class="button-link" href="../html/confirmDelete.php">Eliminar cuenta</a>
                 </div>
 
         </section>
