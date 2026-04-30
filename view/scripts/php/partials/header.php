@@ -22,7 +22,7 @@ $cartHref = $canUseCard ? '../php/insert_card.php' : 'insert_card.php';
                 <li><a href="#">SERVICIOS</a></li>
                 <li><a href="events.php">EVENTOS</a></li>
                 <li><a href="#">PREMIUM</a></li>
-                <li><a href="<?php echo htmlspecialchars($cartHref); ?>"><i class="bi bi-cart"></i><span class="sr-only">Carrito</span></a></li>
+                <li><a href="<?php echo htmlspecialchars($cartHref); ?>"><i class="bi bi-cart"></i><span class="sr-only"></span></a></li>
                 <li id="menu-item1" class="menu-item1" style="position: relative;">
                     <a href="#" aria-label="Abrir menu de usuario"><i class="bi bi-person"></i></a>
                     <ul id="submenu1" class="submenu1" style="position:absolute;top:40px;left:-100px;">
@@ -58,7 +58,7 @@ $cartHref = $canUseCard ? '../php/insert_card.php' : 'insert_card.php';
                     </ul>
                     <img src="../../assets/imagenes/logo_CaseHub.png" class="logo-image" alt="Logo CaseHUB">
                 </li>
-                <li><a href="<?php echo htmlspecialchars($cartHref); ?>"><i class="bi bi-cart"></i><span class="sr-only">Carrito</span></a></li>
+                <li><a href="<?php echo htmlspecialchars($cartHref); ?>"><i class="bi bi-cart"></i><span class="sr-only"></span></a></li>
             </ul>
         </div>
     </nav>
