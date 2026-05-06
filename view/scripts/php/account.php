@@ -153,7 +153,7 @@ $isAdmin = ($user['role'] ?? 'standard') === 'admin';
             <ul class="footer-links">
                 <li><a href="../html/index.php">Inicio</a></li>
                 <li><a href="../html/events.php">Eventos</a></li>
-                <li><a href="../html/evento1.php">Evento actual</a></li>
+                <li><a href="../html/evento-detail.php?id=1">Evento actual</a></li>
                 <li><a href="../html/createEV.html">Crear evento</a></li>
                 <li><a href="../html/login.php">Iniciar sesion</a></li>
                 <li><a href="account.php">Perfil</a></li>
