@@ -7,7 +7,7 @@
     }
     ?>
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="es">
 
     <?php require_once __DIR__ . '/../php/partials/head.php'; ?>
 
@@ -15,76 +15,58 @@
     <?php require_once __DIR__ . '/../php/partials/header.php'; ?>
 
         <section class="index_background"></section>
-        <section>
+    
+     <main>
+
+        <section class="events-heading">
             <h1>AGENDA EVENTOS 2026</h1>
         </section>
             <div class="event-container">
-                <div class="event-card">
-                    <img src="../../assets/fundas/lyoppo.jpg" alt="Presentación del OPPO Reno 14 Series 5G en tienda">
-                    <h3>OPPO Reno 14 Series 5G</h3>
-                    <p>Consigue una firma de Lamine Yamal</p>
-                    <time datetime="2026-04-23">23 de abril 2026</time><br><br>
-                    <a href="evento1.html" class="ver-mas">Ver evento</a>
-                </div>
+                
+        <?php if (empty($events)): ?>
+                    <p>No hay eventos publicados ahora mismo.</p>
+                <?php endif; ?>
 
+                <?php foreach ($events as $event): ?>
+                    <?php
+                    $id = (int) $event['id'];
+                    $name = htmlspecialchars($event['nombre']);
+                    $summary = htmlspecialchars($event['resumen'] ?: $event['descripcion']);
+                    $image = htmlspecialchars($event['ruta_imagen'] ?: '../../assets/imagenes/logo_CaseHub.png');
+                    $city = htmlspecialchars($event['ciudad'] ?: 'Online');
+                    $date = htmlspecialchars($event['fecha_evento']);
+                    ?>
+                    <article class="event-card">
+                        <img src="<?php echo $image; ?>" alt="Imagen de <?php echo $name; ?>">
+                        <h3><?php echo $name; ?></h3>
+                        <p><?php echo $summary; ?></p>
+                        <p class="event-meta"><?php echo $city; ?></p>
+                        <time datetime="<?php echo $date; ?>"><?php echo eventDateLabel($event['fecha_evento']); ?></time><br>
+                        <a href="event-detail.php?id=<?php echo $id; ?>" class="ver-mas">Ver evento</a>
+                    </article>
+                <?php endforeach; ?>
+            </div>
 
+            <?php if ($totalPages > 1): ?>
+                <nav class="pagination" aria-label="Paginacion de eventos">
+                    <?php if ($page > 1): ?>
+                        <a href="events.php?page=<?php echo $page - 1; ?>" aria-label="Pagina anterior">&laquo;</a>
+                    <?php endif; ?>
 
-                <div class="event-card">
-                    <img src="../../assets/fundas/OTW.jpg" alt="mj">
-                    <h3>Disfruta de lo mejor de Michael Jackson</h3>
-                    <p>Sé el primero en escucharlo</p>
-                    <time datetime="2026-03-14">14 de Marzo 2026</time><br><br>
-                    <a href="evento2.html" class="ver-mas">Ver evento</a>
-                </div>
+                    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                        <?php if ($i === $page): ?>
+                            <span aria-current="page"><?php echo $i; ?></span>
+                        <?php else: ?>
+                            <a href="events.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        <?php endif; ?>
+                    <?php endfor; ?>
 
-                <div class="event-card">
-                    <img src="../../assets/fundas/funda.jpg" alt="Funda ecológica">
-                    <h3>UAG Essential Armor</h3>
-                    <p>Lo mejor para proteger tu telefono</p>
-                    <time datetime="2026-03-15">15 de Marzo 2026</time><br><br>
-                    <a href="evento3.html" class="ver-mas">Ver evento</a>
-                </div>
-
-                <div class="event-card">
-                    <img src="../../assets/fundas/sakura_case.png" alt="Funda lujo">
-                    <h3>Saca tu creatividad</h3>
-                    <p>¿Seras el ganador del sorteo?</p>
-                    <time datetime="2026-04-15">12,13,14 y 15 de Abril 2026</time><br><br>
-                    <a href="evento4.html" class="ver-mas">Ver evento</a>
-
-                </div>
-
-                <div class="event-card">
-                    <img src="../../assets/fundas/Designer.png" alt="gaming">
-                    <h3>Participa en nuetro torneo gaming</h3>
-                    <p>Demuestra tu nivel</p>
-                    <time datetime="2026-05-14">14 y 15 de Mayo 2026</time><br><br>
-                    <a href="evento5.html" class="ver-mas">Ver evento</a>
-                </div>
-
-                <div class="event-card">
-                    <img src="../../assets/fundas/setup.jpg" alt="setup">
-                    <h3>Monta tu setup perfecto</h3>
-                    <p>Para todo tipo de publico</p>
-                    <time datetime="2026-05-2">2 de mayo 2026</time><br><br>
-                    <a href="evento6.html" class="ver-mas">Ver evento</a>
-                </div>
-
-                <div class="event-card">
-                    <img src="../../assets/fundas/ciberseguridad.jpg" alt="ciberseguridad">
-                    <h3>Taller de Seguridad Digital</h3>
-                    <p>Protege tu móvil y tus datos</p>
-                    <time datetime="2026-04-3">3 de abril 2026</time><br><br>
-                    <a href="evento7.html" class="ver-mas">Ver evento</a>
-                </div>
-
-                <div class="event-card">
-                    <img src="../../assets/fundas/repa.png" alt="repa">
-                    <h3>Clínica del Móvil</h3>
-                    <p>Repara tu dispositivo movil</p>
-                    <time datetime="2026-04-26">26 de abril 2026</time><br><br>
-                    <a href="evento8.html" class="ver-mas">Ver evento</a>
-                </div>
+                    <?php if ($page < $totalPages): ?>
+                        <a href="events.php?page=<?php echo $page + 1; ?>" aria-label="Pagina siguiente">&raquo;</a>
+                    <?php endif; ?>
+                </nav>
+            <?php endif; ?>
+                
             </div><br>
         </section>
 
@@ -105,6 +87,8 @@
                 <a class="return form" href="../php/deleteEV.php">BORRAR EVENTO</a>
             </section>
         <?php endif; ?>
+
+        </main>
 
     <?php require_once __DIR__ . '/../php/partials/footer.php'; ?>
 
