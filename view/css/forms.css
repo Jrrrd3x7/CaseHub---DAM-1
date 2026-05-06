@@ -103,8 +103,23 @@ h2 {
     cursor: pointer;
 }
 
+.btn-danger{
+    width: 40%;
+    padding: 12px;
+    background: red;
+    border: none;
+    border-radius: 8px;
+    color:white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 .btn:hover {
     background: var(--blue-dark);
+}
+
+.btn-danger:hover {
+    background: darkred;
 }
 
 .register {
