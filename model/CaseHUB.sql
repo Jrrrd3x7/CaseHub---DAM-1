@@ -194,14 +194,14 @@ INSERT INTO eventos (
 )
 
 VALUES
-(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'premium'), 'Fundas Premium 2026', 'Coleccion sostenible y elegante.', 'Coleccion premium con materiales sostenibles y diseno elegante.', 'Barcelona', '2026-03-15', 120, 'evento1.html', '../../assets/fundas/sakura_case.png', 'publicado'),
-(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'gaming'), 'Fundas Gaming Antigolpes', 'Proteccion extrema para gamers.', 'Proteccion extrema para gamers con diseno ergonomico y ventilacion termica.', 'Madrid', '2026-04-10', 150, 'evento2.html', '../../assets/fundas/black_case.png', 'publicado'),
-(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'eco'), 'Fundas Eco Friendly', 'Materiales reciclados.', 'Fundas fabricadas con materiales reciclados y sostenibles.', 'Valencia', '2026-05-05', 90, 'evento3.html', '../../assets/fundas/patriot_case.png', 'publicado'),
-(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'luxury'), 'Fundas Luxury Edition', 'Diseno exclusivo.', 'Edicion de lujo con acabados metalicos premium.', 'Sevilla', '2026-06-12', 60, 'evento4.html', '../../assets/fundas/mi_amor.png', 'publicado'),
-(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'resistencia'), 'Fundas Transparentes Pro', 'Pruebas extremas.', 'Proteccion transparente con alta resistencia a impactos.', 'Bilbao', '2026-07-01', 180, 'evento5.html', '../../assets/fundas/shark_case.png', 'publicado'),
-(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'workshop'), 'Fundas Minimal Series', 'Crea tu funda.', 'Diseno minimalista con maxima proteccion.', 'Malaga', '2026-08-20', 70, 'evento6.html', '../../assets/fundas/sakura_case.png', 'publicado'),
-(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'colaboracion'), 'Fundas Urban Style', 'Nueva coleccion exclusiva.', 'Diseno urbano moderno inspirado en streetwear.', 'Zaragoza', '2026-09-10', 110, 'evento7.html', '../../assets/fundas/mi_amor.png', 'publicado'),
-(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'feria-tecnologica'), 'Fundas Future Tech', 'Presentacion global.', 'Diseno futurista con materiales de ultima generacion.', 'Lisboa', '2026-10-05', 200, 'evento8.html', '../../assets/fundas/black_case.png', 'publicado');
+(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'meet-greet'), 'OPPO Reno 14 Series 5G', 'Consigue una firma de Lamine Yamal.', 'Descubre el nuevo OPPO Reno 14 Series 5G con increibles mejoras en camara y rendimiento con la presencia de Lamine Yamal en nuestra tienda de Barcelona.', 'Barcelona', '2026-04-23', 120, 'event-detail.php', '../../assets/fundas/lyoppo.jpg', 'publicado'),
+(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'showroom'), 'Disfruta de lo mejor de Michael Jackson', 'Se el primero en escucharlo.', 'El Iphone 17 pro, el movil con los mejores altavoces del mercado, disponible en nuestra tienda de Madrid.', 'Madrid', '2026-03-14', 150, 'event-detail.php', '../../assets/fundas/OTW.jpg', 'publicado'),
+(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'test-producto'), 'UAG Essential Armor', 'Lo mejor para proteger tu telefono.', 'Prueba con nosotros la nueva funda UAG Essential Armor aprobada por la NASA.', 'Valencia', '2026-03-15', 90, 'event-detail.php', '../../assets/fundas/funda.jpg', 'publicado'),
+(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'concurso'), 'Saca tu creatividad', 'Seras el ganador del sorteo?', 'Dirigete a cualquiera de nuestras tiendas y saca tu creatividad personalizando una funda para tu dispositivo movil y entra en el sorteo de unos auriculares inalambricos.', 'Sevilla', '2026-04-15', 60, 'event-detail.php', '../../assets/fundas/sakura_case.png', 'publicado'),
+(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'gaming'), 'Participa en nuestro torneo gaming', 'Demuestra tu nivel.', 'El ganador ganara un pase para STEAM, unos cascos gaming, un teclado y un raton gaming.', 'Bilbao', '2026-05-14', 180, 'event-detail.php', '../../assets/fundas/Designer.png', 'publicado'),
+(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'workshop'), 'Monta tu setup perfecto', 'Para todo tipo de publico.', 'Como montar un setup gaming o de estudio: aprende sobre ergonomia, iluminacion y cableado en la exposicion de setups reales.', 'Malaga', '2026-05-02', 70, 'event-detail.php', '../../assets/fundas/setup.jpg', 'publicado'),
+(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'workshop'), 'Taller de Seguridad Digital', 'Protege tu movil y tus datos.', 'Como proteger tu movil y tus datos: aprenderas a crear copias de seguridad y a evitar estafas online.', 'Zaragoza', '2026-04-03', 110, 'event-detail.php', '../../assets/fundas/ciberseguridad.jpg', 'publicado'),
+(1, 1, (SELECT id FROM tipos_evento WHERE codigo = 'resistencia'), 'Clinica del Movil', 'Repara tu dispositivo movil.', 'Consejos de uso y mantenimiento para alargar la vida de tu movil, optimizar la bateria y mejorar el almacenamiento para aumentar su rendimiento.', 'Lisboa', '2026-04-26', 200, 'event-detail.php', '../../assets/fundas/repa.png', 'publicado');
 
 INSERT INTO multimedia_eventos (id_evento, tipo, archivo, titulo, formato)
 SELECT id, 'imagen', ruta_imagen, CONCAT(nombre, ' imagen principal'), 'image/png'
@@ -209,12 +209,24 @@ FROM eventos
 WHERE ruta_imagen IS NOT NULL;
 
 INSERT INTO multimedia_eventos (id_evento, tipo, archivo, titulo, formato)
-SELECT id, 'video', '../../assets/videos/videoplayback.mp4', CONCAT(nombre, ' video'), 'video/mp4'
-FROM eventos;
+SELECT id, 'video', '../../assets/videos/oppoly.mp4', 'Video OPPO Reno 14 Series 5G', 'video/mp4'
+FROM eventos
+WHERE nombre = 'OPPO Reno 14 Series 5G';
 
 INSERT INTO multimedia_eventos (id_evento, tipo, archivo, titulo, formato)
-SELECT id, 'audio', '../../assets/videos/Sonido de la Naturaleza.mp3', CONCAT(nombre, ' audio'), 'audio/mp3'
-FROM eventos;
+SELECT id, 'audio', '../../assets/audio/mj.mp3', 'Audio Michael Jackson', 'audio/mpeg'
+FROM eventos
+WHERE nombre = 'Disfruta de lo mejor de Michael Jackson';
+
+INSERT INTO multimedia_eventos (id_evento, tipo, archivo, titulo, formato)
+SELECT id, 'audio', '../../assets/audio/asc.mp3', 'Audio Seguridad Digital', 'audio/mpeg'
+FROM eventos
+WHERE nombre = 'Taller de Seguridad Digital';
+
+INSERT INTO multimedia_eventos (id_evento, tipo, archivo, titulo, formato)
+SELECT id, 'video', '../../assets/videos/reparacion.mp4', 'Video Clinica del Movil', 'video/mp4'
+FROM eventos
+WHERE nombre = 'Clinica del Movil';
 
 DELIMITER $$
 
@@ -263,7 +275,8 @@ BEGIN
         descripcion,
         ciudad,
         fecha_evento,
-        plazas_disponibles
+        plazas_disponibles,
+        pagina_detalle
     )
     VALUES (
         p_id_usuario,
@@ -273,7 +286,8 @@ BEGIN
         p_descripcion,
         p_ciudad,
         p_fecha_evento,
-        p_plazas
+        p_plazas,
+        'event-detail.php'
     );
 END $$
 
