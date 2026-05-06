@@ -111,6 +111,15 @@
     color: var(--blue-gray);
 }
 
+.event-form-error {
+    padding: 12px;
+    border: 1px solid #b42318;
+    border-radius: 6px;
+    color: #b42318;
+    background-color: #fff5f5;
+    font-weight: bold;
+}
+
 .event-submit {
     display: inline-flex;
     align-items: center;
