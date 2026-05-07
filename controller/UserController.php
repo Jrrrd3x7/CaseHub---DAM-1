@@ -349,6 +349,10 @@ class UserController
     $stmt = $this->conn->prepare(
         "SELECT contrasena FROM usuarios WHERE id = :id"
     );
+    if ($newPassword === '') {
+    return "La nueva contraseña no puede estar vacía.";
+}
+
     $stmt->execute([':id' => $userId]);
     $user = $stmt->fetch();
 
