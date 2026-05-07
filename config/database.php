@@ -7,3 +7,5 @@ return [
     'username' => getenv('DB_USER') ?: 'root',
     'password' => getenv('DB_PASS') !== false ? getenv('DB_PASS') : '',
 ];
+
+
